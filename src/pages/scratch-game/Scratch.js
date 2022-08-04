@@ -1,6 +1,6 @@
 import React from "react";
 //components
-import { ScratchImage } from "../../components/Scratch/ScratchImage";
+import { ScratchGame } from "../../components/Scratch/ScratchGame";
 import { ScratchWon } from "../../components/Scratch/ScratchWon";
 
 const Scratch = () => {
@@ -13,9 +13,7 @@ const Scratch = () => {
         alignItems: "center",
       }}
     >
-      <p>@taylorswift presents</p>
-      <p>Scratch to Win!</p>
-      <ScratchImage />
+      <ScratchGame />
       <ScratchWon />
     </div>
   );

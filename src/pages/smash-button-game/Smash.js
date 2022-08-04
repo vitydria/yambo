@@ -1,5 +1,6 @@
 import React from "react";
 //components
+import { Start } from "../../components/SmashButton/Start";
 import { SmashButtonGame } from "../../components/SmashButton/SmashButtonGame";
 import { SmashWon } from "../../components/SmashButton/SmashWon";
 
@@ -14,9 +15,7 @@ const Smash = () => {
         alignItems: "center",
       }}
     >
-      <h1>@friendlyfriend presents</h1>
-      <p>Tap Monster!</p>
-      <button>play</button>
+      <Start />
       <SmashButtonGame />
       <SmashWon />
     </div>

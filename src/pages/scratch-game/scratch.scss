@@ -1,0 +1,15 @@
+.scratch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 29%;
+  height: 100vh;
+}
+
+.won {
+  background-image: url("../../assets/image2.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  justify-content: center;
+}

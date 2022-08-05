@@ -1,9 +1,9 @@
 import { Routes, Route } from "react-router-dom";
-import "./App.css";
 import Main from "./pages/main/Main";
 import Scratch from "./pages/scratch-game/Scratch";
 import Smash from "./pages/smash-button-game/Smash";
 import MoreGames from "./pages/more-games/MoreGames";
+import "./styles/_globals.scss";
 
 function App() {
   return (

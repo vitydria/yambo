@@ -1,18 +1,22 @@
 import React from "react";
 //components
-import { Token } from "../../components/MoreGames/Token";
-import { Game } from "../../components/MoreGames/Game";
+import { Token } from "../../components/MoreGames/Token/Token";
+import { Game } from "../../components/MoreGames/Game/Game";
+//style
+import "./moreGames.scss";
 
 const MoreGames = () => {
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-      <p>Your tokens</p>
+    <div className="more-games">
+      <p className="text mg-title mg-t-m">Your Tokens</p>
       <Token />
-      <p>Explore other games</p>
-      <Game />
-      <Game />
-      <Game />
-      <p>See more...</p>
+      <p className="text mg-title">Explore Other Games</p>
+      <div className="mg-cont">
+        <Game />
+        <Game />
+        <Game />
+      </div>
+      <p className="text mg-foo">See More...</p>
     </div>
   );
 };

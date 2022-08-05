@@ -1,22 +1,16 @@
 import React from "react";
 //components
-import { Start } from "../../components/SmashButton/Start";
-import { SmashButtonGame } from "../../components/SmashButton/SmashButtonGame";
-import { SmashWon } from "../../components/SmashButton/SmashWon";
+import { Start } from "../../components/SmashButton/Start/Start";
+import { SmashButtonGame } from "../../components/SmashButton/SmashButtonGame/SmashButtonGame";
+import { SmashWon } from "../../components/SmashButton/SmashWon/SmashWon";
+//style
+import "./smash.scss";
 
 const Smash = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "25px",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Start />
-      <SmashButtonGame />
+    <div className="smash won">
+      {/* <Start /> */}
+      {/* <SmashButtonGame /> */}
       <SmashWon />
     </div>
   );

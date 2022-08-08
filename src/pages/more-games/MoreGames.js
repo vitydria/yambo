@@ -2,6 +2,8 @@ import React from "react";
 //components
 import { Token } from "../../components/MoreGames/Token/Token";
 import { Game } from "../../components/MoreGames/Game/Game";
+//react-router
+import { Link } from "react-router-dom";
 //style
 import "./moreGames.scss";
 
@@ -16,7 +18,11 @@ const MoreGames = () => {
         <Game />
         <Game />
       </div>
-      <p className="text mg-foo">See More...</p>
+      <p className="text mg-foo">
+        <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+          See More...
+        </Link>
+      </p>
     </div>
   );
 };

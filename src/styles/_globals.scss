@@ -2,6 +2,31 @@
   height: 100vh;
 }
 
+.main-btn-cont {
+  position: absolute;
+  right: 50px;
+  top: 20px;
+  display: "flex";
+  gap: 5px;
+}
+
+.main-btn {
+  width: 15px;
+  margin-left: 2px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.gold {
+  background: gold;
+  border: 1px solid gold;
+}
+
+.blue {
+  background: skyblue;
+  border: 1px solid skyblue;
+}
+
 .text {
   font-family: "DM Sans Bold";
   text-align: center;

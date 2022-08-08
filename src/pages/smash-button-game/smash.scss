@@ -1,0 +1,19 @@
+.smash {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+}
+
+.start {
+  justify-content: flex-start;
+}
+
+.won {
+  background-image: url("../../assets/image2.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  justify-content: center;
+}

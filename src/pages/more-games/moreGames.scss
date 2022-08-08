@@ -1,0 +1,28 @@
+.more-games {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mg-cont {
+  width: 92%;
+  align-self: center;
+}
+
+.mg-title {
+  font-size: 22px;
+  line-height: 32px;
+  letter-spacing: -0.8px;
+}
+
+.mg-t-m {
+  margin-top: 17%;
+}
+
+.mg-foo {
+  font-size: 16px;
+}
+
+.m {
+  margin: 0;
+}

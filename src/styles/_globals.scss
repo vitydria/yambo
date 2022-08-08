@@ -1,0 +1,63 @@
+.App {
+  height: 100vh;
+}
+
+.main-btn-cont {
+  position: absolute;
+  right: 50px;
+  top: 20px;
+  display: "flex";
+  gap: 5px;
+}
+
+.main-btn {
+  width: 15px;
+  margin-left: 2px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.gold {
+  background: gold;
+  border: 1px solid gold;
+}
+
+.blue {
+  background: skyblue;
+  border: 1px solid skyblue;
+}
+
+.text {
+  font-family: "DM Sans Bold";
+  text-align: center;
+  color: white;
+}
+
+.host {
+  font-size: 22px;
+  letter-spacing: -0.8px;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.title {
+  font-size: 40px;
+  line-height: 32px;
+  letter-spacing: -0.8px;
+}
+
+.button {
+  background: linear-gradient(180deg, #5eb8fa 0%, #8a49f7 100%);
+  color: #ffffff;
+  border-radius: 30px;
+  width: 80%;
+  font-family: "DM Sans Bold";
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 1px;
+  text-align: center;
+  border: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 128px;
+}

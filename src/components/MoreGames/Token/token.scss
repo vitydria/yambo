@@ -1,0 +1,17 @@
+.token-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.token-img {
+  width: 113px;
+  height: 136px;
+  border: 10px solid #ffffff;
+  border-radius: 30px;
+}
+
+.token-txt-cont {
+  text-align: left;
+}

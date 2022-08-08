@@ -1,3 +1,5 @@
+@import "../../../styles/variables";
+
 .smash-button {
   width: 270px;
   height: 270px;
@@ -20,4 +22,16 @@
 
 .smash-button::before {
   opacity: 0.56;
+}
+
+@media (max-width: $breakpoints-small) {
+  .smash-button {
+    width: 225px;
+    height: 225px;
+  }
+
+  .smash-won {
+    width: 150px;
+    height: 150px;
+  }
 }

@@ -1,3 +1,5 @@
+@import "_variables";
+
 .App {
   height: 100vh;
 }
@@ -51,6 +53,7 @@
   color: #ffffff;
   border-radius: 30px;
   width: 80%;
+  max-width: 300px;
   font-family: "DM Sans Bold";
   font-size: 14px;
   line-height: 20px;
@@ -59,5 +62,24 @@
   border: none;
   padding-top: 10px;
   padding-bottom: 10px;
-  margin-bottom: 128px;
+}
+
+@media (min-width: $breakpoints-tablet) {
+  .host {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: $breakpoints-small) {
+  .host {
+    font-size: 18px;
+  }
+  .title {
+    font-size: 30px;
+  }
+
+  .button {
+    font-size: 12px;
+  }
 }

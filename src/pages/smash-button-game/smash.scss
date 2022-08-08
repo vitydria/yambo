@@ -1,3 +1,5 @@
+@import "../../styles/variables";
+
 .smash {
   display: flex;
   flex-direction: column;
@@ -15,5 +17,18 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  justify-content: center;
+  justify-content: flex-end;
+}
+
+@media (max-width: 450px) {
+  .won {
+    margin-bottom: 50px;
+  }
+}
+
+@media (min-width: 450px) {
+  .won {
+    margin-top: 50px;
+    justify-content: center;
+  }
 }

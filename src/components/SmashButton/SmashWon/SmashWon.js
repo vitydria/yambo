@@ -13,7 +13,7 @@ export const SmashWon = ({ won }) => {
       <SmashButton won={won} />
       <p className="text won-msg">You Won 30$!</p>
       <p className="text desc">{`Message from @friendlyFriend:\n"You must really like pickless!!"`}</p>
-      <button className="button">
+      <button className="button btn-margin">
         <Link
           to="/more-games"
           style={{ textDecoration: "none", color: "white" }}

@@ -1,7 +1,13 @@
+@import "../../../styles/variables";
+
 .won-msg {
   font-size: 48px;
   line-height: 32px;
   letter-spacing: -0.8px;
+}
+
+.btn-margin {
+  margin-bottom: 120px;
 }
 
 .desc {
@@ -9,4 +15,20 @@
   line-height: 32px;
   letter-spacing: -0.8px;
   white-space: pre-line;
+}
+
+@media (min-width: 450px) {
+  .btn-margin {
+    margin-top: 25px;
+  }
+}
+
+@media (max-width: $breakpoints-small) {
+  .won-msg {
+    font-size: 30px;
+  }
+
+  .desc {
+    font-size: 18px;
+  }
 }

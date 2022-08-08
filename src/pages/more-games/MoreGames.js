@@ -10,19 +10,22 @@ import "./moreGames.scss";
 const MoreGames = () => {
   return (
     <div className="more-games">
-      <p className="text mg-title mg-t-m">Your Tokens</p>
-      <Token />
-      <p className="text mg-title">Explore Other Games</p>
-      <div className="mg-cont">
-        <Game />
-        <Game />
-        <Game />
+      <div className="mg-token-cont">
+        <p className="text mg-title mg-t-m">Your Tokens</p>
+        <Token />
       </div>
-      <p className="text mg-foo">
-        <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-          See More...
-        </Link>
-      </p>
+      <div className="mg-cont">
+        <p className="text mg-title">Explore Other Games</p>
+
+        <Game />
+        <Game />
+        <Game />
+        <p className="text mg-foo">
+          <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+            See More...
+          </Link>
+        </p>
+      </div>
     </div>
   );
 };

@@ -8,10 +8,10 @@ import "./scratchWon.scss";
 
 export const ScratchWon = ({ win }) => {
   return (
-    <>
+    <div className="won-container">
       <p className="text title margin-title">You Win!</p>
       <ScratchImage win={win} />
-      <p className="text margin-token">Token #298</p>
+      <p className="text token-size ">Token #298</p>
       <button className="button">
         <Link
           to="/more-games"
@@ -20,6 +20,6 @@ export const ScratchWon = ({ win }) => {
           CONTINUE
         </Link>
       </button>
-    </>
+    </div>
   );
 };

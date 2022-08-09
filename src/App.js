@@ -4,6 +4,7 @@ import Scratch from "./pages/scratch-game/Scratch";
 import Smash from "./pages/smash-button-game/Smash";
 import MoreGames from "./pages/more-games/MoreGames";
 import "./styles/_globals.scss";
+import "./styles/_variables.scss";
 
 function App() {
   return (

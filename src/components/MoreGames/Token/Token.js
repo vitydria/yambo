@@ -7,6 +7,7 @@ export const Token = () => {
     <div className="token-cont">
       <img
         className="token-img"
+        alt="Token sent"
         src="https://i1.sndcdn.com/avatars-000500544273-6kcyh0-t500x500.jpg"
       />
       <div className="token-txt-cont">

@@ -2,3 +2,17 @@
   margin-bottom: 6%;
   margin-top: 14%;
 }
+
+.scratch-img-cont {
+  grid-row: 2 / span 1;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 400px) {
+  .wxyz {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}

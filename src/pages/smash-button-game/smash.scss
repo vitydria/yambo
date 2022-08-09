@@ -1,13 +1,14 @@
-.smash {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 100vh;
-}
+@import "../../styles/variables";
 
-.start {
-  justify-content: flex-start;
+.smash {
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  // height: 100vh;
+  // display: grid;
+  // grid-template-columns: 1fr;
+  // grid-template-rows: 70px calc(100vh - 140px) 70px;
 }
 
 .won {
@@ -15,5 +16,17 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  justify-content: center;
+  justify-content: flex-end;
+}
+
+@media (max-width: 450px) {
+  .won {
+    margin-bottom: 50px;
+  }
+}
+
+@media (min-width: 450px) {
+  .won {
+    justify-content: center;
+  }
 }

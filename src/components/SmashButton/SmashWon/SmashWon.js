@@ -9,18 +9,20 @@ import "./smashWon.scss";
 export const SmashWon = ({ won }) => {
   return (
     <>
-      <p className="text title">1st place</p>
-      <SmashButton won={won} />
-      <p className="text won-msg">You Won 30$!</p>
-      <p className="text desc">{`Message from @friendlyFriend:\n"You must really like pickless!!"`}</p>
-      <button className="button">
-        <Link
-          to="/more-games"
-          style={{ textDecoration: "none", color: "white" }}
-        >
-          CONTINUE
-        </Link>
-      </button>
+      <div className="button-container won-container-bottom">
+        <p className="text title">1st place</p>
+        <SmashButton won={won} />
+        <p className="text won-msg">You Won 30$!</p>
+        <p className="text desc text-bottom">{`Message from @friendlyFriend:\n"You must really like pickless!!"`}</p>
+        <button className="button">
+          <Link
+            to="/more-games"
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            CONTINUE
+          </Link>
+        </button>
+      </div>
     </>
   );
 };

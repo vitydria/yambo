@@ -17,9 +17,11 @@ export const ScratchGame = () => {
           <button className="main-btn blue"></button>
         </Link>
       </div>
-      <p className="text host">@taylorswift presents</p>
-      <p className="text title wxyz">Scratch to Win!</p>
-      <ScratchImage />
+      <p className="text host header">@taylorswift presents</p>
+      <div className="scratch-img-cont">
+        <p className="text title wxyz">Scratch to Win!</p>
+        <ScratchImage />
+      </div>
     </>
   );
 };

@@ -1,3 +1,5 @@
+@import "../../../styles/variables";
+
 .token-cont {
   display: flex;
   justify-content: center;
@@ -14,4 +16,21 @@
 
 .token-txt-cont {
   text-align: left;
+}
+
+@media (min-width: $breakpoints-tablet) {
+  .token-img {
+    width: 145px;
+    height: 145px;
+  }
+}
+
+@media (max-width: $breakpoints-small) {
+  .token-cont {
+    gap: 20px;
+  }
+  .token-img {
+    width: 108px;
+    height: 113px;
+  }
 }

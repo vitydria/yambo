@@ -3,5 +3,11 @@ import React from "react";
 import "./scratchImage.scss";
 
 export const ScratchImage = ({ win }) => {
-  return <div className={`scratch-image ${win ? "image-won" : ""}`}></div>;
+  return (
+    <img
+      alt="Scratching..."
+      src="https://i1.sndcdn.com/avatars-000500544273-6kcyh0-t500x500.jpg"
+      className={`scratch-image ${win ? "image-won" : ""}`}
+    />
+  );
 };

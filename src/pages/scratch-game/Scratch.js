@@ -15,7 +15,7 @@ const Scratch = () => {
   };
 
   return (
-    <div className={`scratch ${win ? "won" : ""}`}>
+    <div className={`scratch ${win ? "scratch-won" : ""}`}>
       <div className="main-btn-cont" style={{ top: "40px" }}>
         <button className="main-btn gold" onClick={handleWin}></button>
         <Link to="/more-games">

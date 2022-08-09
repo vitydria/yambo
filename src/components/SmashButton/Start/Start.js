@@ -5,7 +5,7 @@ import "./start.scss";
 export const Start = ({ setStart }) => {
   return (
     <>
-      <h1 className="text host">@friendlyfriend presents</h1>
+      <h1 className="text host">@friendlyFriend presents...</h1>
       <div className="button-container">
         <p className="text title">Tap Monster!</p>
         <button

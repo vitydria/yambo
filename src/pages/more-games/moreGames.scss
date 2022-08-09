@@ -53,15 +53,10 @@
 
 @media (min-width: $breakpoints-tablet) and (max-width: 949px) {
   .more-games {
-    flex-direction: row;
     align-items: center;
     align-self: center;
+    justify-content: center;
     width: 100%;
-  }
-
-  .mg-token-cont {
-    width: 50%;
-    margin-bottom: 214px;
   }
 
   .mg-cont {

@@ -3,8 +3,6 @@
 .more-games {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  gap: 10px;
 }
 
 .mg-cont {
@@ -16,8 +14,6 @@
   font-size: 22px;
   line-height: 32px;
   letter-spacing: -0.8px;
-  margin-top: 40px;
-  margin-bottom: 50px;
 }
 
 .mg-t-m {
@@ -33,7 +29,14 @@
 }
 
 .mg-token-cont {
+  align-self: center;
   width: unset;
+}
+
+@media (min-height: 700px) {
+  .more-games {
+    gap: 2rem;
+  }
 }
 
 @media (min-width: $breakpoints-laptop) {
@@ -42,7 +45,8 @@
     align-items: center;
     align-self: center;
     justify-content: center;
-    width: 60vw;
+    width: 100vw;
+    height: 100vh;
     margin: auto;
   }
 

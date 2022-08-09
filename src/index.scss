@@ -32,3 +32,9 @@ code {
     url("./fonts/DMSans/DMSans-Regular.ttf") format("truetype");
   font-weight: 400;
 }
+
+@media (min-width: 1100px) {
+  body {
+    font-size: 18px;
+  }
+}

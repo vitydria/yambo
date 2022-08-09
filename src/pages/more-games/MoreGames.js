@@ -14,9 +14,9 @@ const MoreGames = () => {
         <p className="text mg-title mg-t-m">Your Tokens</p>
         <Token />
       </div>
+
       <div className="mg-cont">
         <p className="text mg-title">Explore Other Games</p>
-
         <Game />
         <Game />
         <Game />

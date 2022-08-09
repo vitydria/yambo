@@ -19,9 +19,10 @@
 }
 
 @media (min-width: $breakpoints-tablet) {
-  // .token-cont {
-  //   margin-bottom: 216px;
-  // }
+  .token-img {
+    width: 145px;
+    height: 145px;
+  }
 }
 
 @media (max-width: $breakpoints-small) {

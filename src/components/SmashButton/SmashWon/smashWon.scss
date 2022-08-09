@@ -11,7 +11,7 @@
 }
 
 .desc {
-  font-size: 22px;
+  font-size: 1.375rem;
   line-height: 32px;
   letter-spacing: -0.8px;
   white-space: pre-line;
@@ -25,10 +25,19 @@
 
 @media (max-width: $breakpoints-small) {
   .won-msg {
-    font-size: 30px;
+    font-size: 1.875rem;
   }
 
   .desc {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
+}
+
+.won-container-bottom {
+  justify-content: end;
+  padding-bottom: 1rem;
+}
+
+.text-bottom {
+  margin-bottom: 3rem;
 }

@@ -2,7 +2,7 @@ import React from "react";
 //styles
 import "./smashButton.scss";
 
-export const SmashButton = ({ won, setWon, clicks, setClicks }) => {
+export const SmashButton = ({ won, clicks, setClicks }) => {
   const handleClick = () => {
     setClicks((prev) => prev + 1);
   };

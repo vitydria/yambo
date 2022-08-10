@@ -1,12 +1,16 @@
 import React from "react";
 //components
-import { ScratchImage } from "../ScratchImage/ScratchImage";
+import ScratchOff from "../ScratchOff/ScratchOff";
 //react-router
 import { Link } from "react-router-dom";
 //style
+import scratch from "./scratch-img.svg";
 import "./scratchGame.scss";
 
-export const ScratchGame = () => {
+export const ScratchGame = ({ setWin }) => {
+  const win = () => {
+    setWin(true);
+  };
   return (
     <>
       <div className="main-btn-cont">
@@ -20,7 +24,7 @@ export const ScratchGame = () => {
       <p className="text host header">@taylorswift presents</p>
       <div className="scratch-img-cont">
         <p className="text title wxyz">Scratch to Win!</p>
-        <ScratchImage />
+        <ScratchOff background={scratch} onfinished={win} />
       </div>
     </>
   );

@@ -1,5 +1,5 @@
 import React from "react";
 
-export const Timer = () => {
-  return <p className="text title">39s</p>;
+export const Timer = ({ seconds }) => {
+  return <p className="text title">{`${seconds}s`}</p>;
 };

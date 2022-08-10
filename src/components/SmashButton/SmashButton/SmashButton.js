@@ -2,13 +2,14 @@ import React from "react";
 //styles
 import "./smashButton.scss";
 
-export const SmashButton = ({ won, setWon }) => {
+export const SmashButton = ({ won, setWon, clicks, setClicks }) => {
+  const handleClick = () => {
+    setClicks((prev) => prev + 1);
+  };
   return (
     <button
       className={`smash-button text ${won ? "smash-won" : ""}`}
-      onClick={() => {
-        setWon(true);
-      }}
-    >{`120\nClicks`}</button>
+      onClick={handleClick}
+    >{`${clicks}\nClicks`}</button>
   );
 };

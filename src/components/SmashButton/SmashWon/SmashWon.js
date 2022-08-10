@@ -6,12 +6,12 @@ import { Link } from "react-router-dom";
 //styles
 import "./smashWon.scss";
 
-export const SmashWon = ({ won }) => {
+export const SmashWon = ({ won, clicks }) => {
   return (
     <>
       <div className="button-container won-container-bottom">
         <p className="text title">1st place</p>
-        <SmashButton won={won} />
+        <SmashButton won={won} clicks={clicks} />
         <p className="text won-msg">You Won 30$!</p>
         <p className="text desc text-bottom">{`Message from @friendlyFriend:\n"You must really like pickless!!"`}</p>
         <button className="button">

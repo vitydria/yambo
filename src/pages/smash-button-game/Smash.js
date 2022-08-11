@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 //seo
 import { Helmet } from "react-helmet";
+//hooks
+import useWon from "../../hooks/useWon";
+import useSmash from "../../hooks/useSmash";
 //components
 import { Start } from "../../components/SmashButton/Start/Start";
 import { SmashButtonGame } from "../../components/SmashButton/SmashButtonGame/SmashButtonGame";
@@ -9,9 +12,9 @@ import { SmashWon } from "../../components/SmashButton/SmashWon/SmashWon";
 import "./smash.scss";
 
 const Smash = () => {
-  const [start, setStart] = useState(false);
-  const [won, setWon] = useState(false);
-  const [clicks, setClicks] = useState(0);
+  const { start, setStart, clicks, setClicks } = useSmash();
+  const { won, setWon } = useWon();
+
   return (
     <div className={`smash ${!start ? "" : "start"} ${won ? "won" : ""}`}>
       <Helmet>

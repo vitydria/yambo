@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
+//won
+import useWon from "../../hooks/useWon";
 //components
 import { ScratchGame } from "../../components/Scratch/ScratchGame/ScratchGame";
 import { ScratchWon } from "../../components/Scratch/ScratchWon/ScratchWon";
@@ -8,16 +10,16 @@ import { Helmet } from "react-helmet";
 import "./scratch.scss";
 
 const Scratch = () => {
-  const [win, setWin] = useState(false);
+  const { won, setWon } = useWon();
 
   return (
-    <div className={`scratch ${win ? "scratch-won" : ""}`}>
+    <div className={`scratch ${won ? "scratch-won" : ""}`}>
       <Helmet>
         <meta name="description" content="Scratch image to win a prize" />
         <title>Scratch game</title>
       </Helmet>
-      {!win && <ScratchGame setWin={setWin} />}
-      {win && <ScratchWon win={win} />}
+      {!won && <ScratchGame setWon={setWon} />}
+      {won && <ScratchWon won={won} />}
     </div>
   );
 };

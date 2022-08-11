@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+//hooks
+import useTimer from "../../../hooks/useTimer";
 //components
 import { Timer } from "../Timer";
 import { SmashButton } from "../SmashButton/SmashButton";
@@ -6,20 +8,7 @@ import { SmashButton } from "../SmashButton/SmashButton";
 import "./smashButtonGame.scss";
 
 export const SmashButtonGame = ({ won, setWon, clicks, setClicks }) => {
-  const [seconds, setSeconds] = useState(5);
-
-  useEffect(() => {
-    if (seconds === 0) {
-      setWon(true);
-    }
-
-    if (seconds > 0) {
-      const interval = setInterval(() => {
-        setSeconds((prevSeconds) => prevSeconds - 1);
-      }, 1000);
-      return () => clearInterval(interval);
-    }
-  }, [seconds]);
+  const { seconds } = useTimer({ setWon });
 
   return (
     <>

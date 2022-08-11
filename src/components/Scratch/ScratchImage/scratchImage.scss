@@ -2,34 +2,14 @@
 
 .scratch-image {
   border: 10px solid white;
-  background-color: gray;
-  height: 50vh;
   border-radius: 30px;
-  width: 90%;
+  width: 57%;
+  height: 31.53%;
 }
 
-.image-won {
-  height: 35vh;
-  min-height: 256px;
-  width: 80%;
-}
-
-@media (min-width: $breakpoints-tablet) {
+@media (min-height: 500px) and (min-width: 700px) {
   .scratch-image {
-    width: 450px;
-    height: 450px;
-  }
-}
-
-@media (min-width: 450px) and (max-width: $breakpoints-tablet) {
-  .scratch-image {
-    width: 350px;
-    height: 350px;
-  }
-}
-
-@media (max-width: $breakpoints-small) {
-  .scratch-image {
-    height: 40vh;
+    width: 243px;
+    height: 256px;
   }
 }

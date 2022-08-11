@@ -1,7 +1,7 @@
 @import "../../../styles/variables";
 
 .won-msg {
-  font-size: 48px;
+  font-size: 2rem;
   line-height: 32px;
   letter-spacing: -0.8px;
 }
@@ -17,9 +17,23 @@
   white-space: pre-line;
 }
 
+.won-container-bottom {
+  justify-content: end;
+}
+
 @media (min-width: 450px) {
   .btn-margin {
     margin-top: 25px;
+  }
+}
+
+@media (min-height: 750px) {
+  .text-bottom {
+    margin-bottom: 3rem;
+  }
+
+  .won-container-bottom {
+    padding-bottom: 2rem;
   }
 }
 
@@ -31,13 +45,4 @@
   .desc {
     font-size: 1.125rem;
   }
-}
-
-.won-container-bottom {
-  justify-content: end;
-  padding-bottom: 1rem;
-}
-
-.text-bottom {
-  margin-bottom: 3rem;
 }

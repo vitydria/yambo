@@ -1,6 +1,9 @@
 import React from "react";
 //components
 import { ScratchImage } from "../ScratchImage/ScratchImage";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
+
 //router-dom
 import { Link } from "react-router-dom";
 //styles
@@ -12,14 +15,14 @@ export const ScratchWon = ({ win }) => {
       <p className="text title margin-title">You Win!</p>
       <ScratchImage win={win} />
       <p className="text token-size ">Token #298</p>
-      <button className="button">
-        <Link
-          to="/more-games"
-          style={{ textDecoration: "none", color: "white" }}
-        >
-          CONTINUE
-        </Link>
-      </button>
+      <Link
+        className="button"
+        to="/more-games"
+        style={{ textDecoration: "none", color: "white" }}
+      >
+        CONTINUE
+        <FontAwesomeIcon icon={faArrowRightToBracket} />
+      </Link>
     </div>
   );
 };

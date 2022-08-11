@@ -1,6 +1,8 @@
 import React from "react";
 //components
 import { SmashButton } from "../SmashButton/SmashButton";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
 //react-router
 import { Link } from "react-router-dom";
 //styles
@@ -14,14 +16,14 @@ export const SmashWon = ({ won, clicks }) => {
         <SmashButton won={won} clicks={clicks} />
         <p className="text won-msg">You Won 30$!</p>
         <p className="text desc text-bottom">{`Message from @friendlyFriend:\n"You must really like pickless!!"`}</p>
-        <button className="button">
-          <Link
-            to="/more-games"
-            style={{ textDecoration: "none", color: "white" }}
-          >
-            CONTINUE
-          </Link>
-        </button>
+        <Link
+          className="button"
+          to="/more-games"
+          style={{ textDecoration: "none", color: "white" }}
+        >
+          CONTINUE
+          <FontAwesomeIcon icon={faArrowRightToBracket} />
+        </Link>
       </div>
     </>
   );

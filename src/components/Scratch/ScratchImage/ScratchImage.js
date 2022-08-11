@@ -7,7 +7,7 @@ export const ScratchImage = ({ win }) => {
     <img
       alt="Scratching..."
       src="https://i1.sndcdn.com/avatars-000500544273-6kcyh0-t500x500.jpg"
-      className={`scratch-image ${win ? "image-won" : ""}`}
+      className="scratch-image"
     />
   );
 };

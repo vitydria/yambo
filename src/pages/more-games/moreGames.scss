@@ -11,7 +11,7 @@
 }
 
 .mg-title {
-  font-size: 22px;
+  font-size: 1.375rem;
   line-height: 32px;
   letter-spacing: -0.8px;
 }
@@ -55,18 +55,19 @@
   }
 }
 
-@media (min-width: $breakpoints-tablet) and (max-width: 949px) {
+@media (min-width: $breakpoints-tablet) {
   .more-games {
     align-items: center;
     align-self: center;
     justify-content: center;
     width: 100%;
+    height: 100vh;
   }
 
   .mg-cont {
     width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
   }
-}
-
-@media (min-width: $breakpoints-small) {
 }

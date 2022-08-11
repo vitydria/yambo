@@ -2,11 +2,4 @@
 
 .line {
   white-space: pre-line;
-  margin: 50px 0;
-}
-
-@media (min-width: $breakpoints-tablet) {
-  .line {
-    margin: 75px 0;
-  }
 }

@@ -1,5 +1,7 @@
 //-- Dependencies --------------------------------
 import React from "react";
+//styles
+import "./scratchOff.scss";
 
 //-- Constants -----------------------------------
 const SCRATCH_FOREGROUND_DEFAULT = "#d4d4d4";
@@ -114,6 +116,7 @@ export default function ScratchOff({
   return (
     <canvas
       ref={canvasReference}
+      className="canvas-style"
       onMouseMove={(eventMouse) => {
         handleMouseMove(eventMouse, scratchPosition, setScratchPosition);
       }}

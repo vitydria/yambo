@@ -45,7 +45,6 @@
   font-size: 2.5rem;
   line-height: 2rem;
   letter-spacing: -0.8px;
-  margin-bottom: 3.15rem;
 }
 
 .button {
@@ -58,10 +57,25 @@
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 1px;
+  cursor: pointer;
   text-align: center;
   border: none;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.button:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(94, 184, 250, 1) 35%,
+    rgba(138, 73, 247, 0.9) 100%
+  );
+}
+
+.button:active {
+  box-shadow: 13px 20px 40px 10px rgb(0 0 0 / 15%);
+  transform: translateY(4px);
+  /* Moving button 4px to y-axis */
 }
 
 @media (min-width: $breakpoints-tablet) {

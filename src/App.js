@@ -1,8 +1,13 @@
+//react-router
 import { Routes, Route } from "react-router-dom";
+//seo
+import { Helmet } from "react-helmet";
+//pages
 import Main from "./pages/main/Main";
 import Scratch from "./pages/scratch-game/Scratch";
 import Smash from "./pages/smash-button-game/Smash";
 import MoreGames from "./pages/more-games/MoreGames";
+//styles
 import "./styles/_globals.scss";
 import "./styles/_variables.scss";
 

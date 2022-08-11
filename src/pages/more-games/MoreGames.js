@@ -2,6 +2,8 @@ import React from "react";
 //components
 import { Token } from "../../components/MoreGames/Token/Token";
 import { Game } from "../../components/MoreGames/Game/Game";
+//seo
+import { Helmet } from "react-helmet";
 //react-router
 import { Link } from "react-router-dom";
 //style
@@ -10,6 +12,10 @@ import "./moreGames.scss";
 const MoreGames = () => {
   return (
     <div className="more-games">
+      <Helmet>
+        <meta name="description" content="Take a look to more games to play" />
+        <title>More Games</title>
+      </Helmet>
       <div className="mg-token-cont">
         <p className="text mg-title mg-t-m">Your Tokens</p>
         <Token />

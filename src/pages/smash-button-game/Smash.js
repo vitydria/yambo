@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+//seo
+import { Helmet } from "react-helmet";
 //components
 import { Start } from "../../components/SmashButton/Start/Start";
 import { SmashButtonGame } from "../../components/SmashButton/SmashButtonGame/SmashButtonGame";
@@ -12,6 +14,13 @@ const Smash = () => {
   const [clicks, setClicks] = useState(0);
   return (
     <div className={`smash ${!start ? "" : "start"} ${won ? "won" : ""}`}>
+      <Helmet>
+        <meta
+          name="description"
+          content="Smash the button as much as you can"
+        />
+        <title>Smash button game</title>
+      </Helmet>
       {!start && <Start setStart={setStart} />}
       {start && !won && (
         <SmashButtonGame

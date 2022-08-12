@@ -1,4 +1,5 @@
 //-- State management utilities ------------------
+
 export const SCRATCH_FOREGROUND_DEFAULT = "#d4d4d4";
 export const SCRATCH_BACKGROUND_DEFAULT = "#888";
 const SCRATCH_LINE_WIDTH = 32;
@@ -267,4 +268,8 @@ export function eraseScratchLine(
   scratchContext.fillStyle = SCRATCH_SHADOW_COLOR;
   scratchContext.fillRect(0, 0, displaySize.width, displaySize.height);
   setComplete(true);
+}
+
+export function randomImage() {
+  return Math.floor(Math.random() * (3 + 1));
 }

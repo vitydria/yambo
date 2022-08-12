@@ -20,8 +20,8 @@ const useScratch = ({ width, height, background, foreground, onfinished }) => {
   const [foregroundData, setForeground] = useState(defaultForeground);
   const [backgroundData, setBackground] = useState(defaultBackground);
   const [displaySize, setDisplaySize] = useState(null);
-
   const [scratchPosition, setScratchPosition] = useState(defaultMousePosition);
+
   // Load images from props
   useEffect(() => {
     loadImage(background, setBackground);

@@ -8,7 +8,6 @@ import "./scratchStart.scss";
 export const ScratchStart = ({ setStart }) => {
   return (
     <>
-      <FontAwesomeIcon icon="fa-solid fa-trophy" />
       <p className="text host header">@friendlyFriends presents...</p>
       <div className="container">
         <p className="text title">Scratch Game</p>

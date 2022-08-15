@@ -175,6 +175,32 @@ export function centerImage(context, image, displaySize) {
   }
   context.drawImage(image, offsetX, offsetY, drawWidth, drawHeight);
 }
+
+export function handleTouchMove(
+  touchEvent,
+  scratchPosition,
+  setScratchPosition
+) {
+  const bounds = touchEvent.currentTarget.getBoundingClientRect();
+  const moveEndX = touchEvent.changedTouches[0].clientX - bounds.left;
+  const moveEndY = touchEvent.changedTouches[0].clientY - bounds.top;
+
+  let moveStartX = scratchPosition.endX;
+  let moveStartY = scratchPosition.endY;
+  if (moveStartX === null) {
+    moveStartX = moveEndX;
+  }
+  if (moveStartY === null) {
+    moveStartY = moveEndY;
+  }
+  // Store last movement on state, for future comparisons
+  setScratchPosition({
+    startX: moveStartX,
+    startY: moveStartY,
+    endX: moveEndX,
+    endY: moveEndY,
+  });
+}
 //-- Interaction (mouse) utilities ---------------
 export function handleMouseMove(
   mouseEvent,

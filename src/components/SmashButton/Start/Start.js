@@ -4,7 +4,7 @@ import "./start.scss";
 
 export const Start = ({ setStart }) => {
   return (
-    <>
+    <div className="start">
       <h1 className="header text host">@friendlyFriend presents...</h1>
       <div className="button-container">
         <p className="text title">Tap Monster!</p>
@@ -18,6 +18,6 @@ export const Start = ({ setStart }) => {
         </button>
       </div>
       <p className="text footer">yambo</p>
-    </>
+    </div>
   );
 };

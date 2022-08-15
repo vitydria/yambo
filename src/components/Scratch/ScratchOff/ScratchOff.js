@@ -5,6 +5,7 @@ import {
   SCRATCH_BACKGROUND_DEFAULT,
   SCRATCH_FOREGROUND_DEFAULT,
   handleMouseMove,
+  handleTouchMove,
 } from "../../../utils/scratch";
 //styles
 import "./scratchOff.scss";
@@ -36,6 +37,9 @@ export default function ScratchOff({
       className="canvas-style"
       onMouseMove={(eventMouse) => {
         handleMouseMove(eventMouse, scratchPosition, setScratchPosition);
+      }}
+      onTouchMove={(eventTouch) => {
+        handleTouchMove(eventTouch, scratchPosition, setScratchPosition);
       }}
     />
   );

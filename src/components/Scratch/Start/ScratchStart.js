@@ -5,7 +5,7 @@ import { faTrophy } from "@fortawesome/free-solid-svg-icons";
 //styles
 import "./scratchStart.scss";
 
-export const ScratchStart = () => {
+export const ScratchStart = ({ setStart }) => {
   return (
     <>
       <FontAwesomeIcon icon="fa-solid fa-trophy" />
@@ -21,7 +21,14 @@ export const ScratchStart = () => {
           <p className="text prize-desc">#3 Spotify premium</p>
           <p className="text prize-desc">#4 Tokens</p>
         </div>
-        <button className="button">PLAY</button>
+        <button
+          className="button"
+          onClick={() => {
+            setStart(true);
+          }}
+        >
+          PLAY
+        </button>
       </div>
     </>
   );

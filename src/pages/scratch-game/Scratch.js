@@ -32,7 +32,7 @@ const Scratch = () => {
         <meta name="description" content="Scratch image to win a prize" />
         <title>Scratch game</title>
       </Helmet>
-      {!start && <ScratchStart />}
+      {!start && <ScratchStart setStart={setStart} />}
       {!won && start && (
         <ScratchGame setWon={setWon} image={images[index.current]} />
       )}

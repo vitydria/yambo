@@ -29,3 +29,9 @@
   align-items: flex-start;
   width: 60%;
 }
+
+@media (min-width: 550px) {
+  .desc-cont {
+    align-items: center;
+  }
+}

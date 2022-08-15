@@ -24,7 +24,6 @@ const Scratch = () => {
   const messages = ["Ticket for a concert", "Album", "Spotify", "Tokens"];
 
   const index = useRef(randomImage(won));
-  console.log("index: ", index);
 
   return (
     <div className={`scratch ${won ? "scratch-won" : ""}`}>

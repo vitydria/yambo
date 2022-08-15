@@ -14,9 +14,12 @@ import image4 from "../../assets/taylor4.svg";
 //styles
 import "./scratch.scss";
 import { randomImage } from "../../utils/scratch";
+import { ScratchStart } from "../../components/Scratch/Start/ScratchStart";
+import useSmash from "../../hooks/useSmash";
 
 const Scratch = () => {
   const { won, setWon } = useWon();
+  const { start, setStart } = useSmash();
   const images = [image1, image2, image3, image4];
   const messages = ["Ticket for a concert", "Album", "Spotify", "Tokens"];
 
@@ -29,7 +32,10 @@ const Scratch = () => {
         <meta name="description" content="Scratch image to win a prize" />
         <title>Scratch game</title>
       </Helmet>
-      {!won && <ScratchGame setWon={setWon} image={images[index.current]} />}
+      {!start && <ScratchStart />}
+      {!won && start && (
+        <ScratchGame setWon={setWon} image={images[index.current]} />
+      )}
       {won && (
         <ScratchWon
           won={won}

@@ -3,5 +3,8 @@
   grid-template-columns: 1fr;
   grid-template-rows: 70px calc(100vh - 140px) 70px;
   height: 100vh;
+  position: fixed;
+  overflow: hidden;
   align-items: center;
+  width: 100%;
 }

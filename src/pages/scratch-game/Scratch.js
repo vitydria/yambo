@@ -1,9 +1,12 @@
 import React, { useRef } from "react";
-//won
+//hooks
 import useWon from "../../hooks/useWon";
+import useSmash from "../../hooks/useSmash";
+import useStart from "../../hooks/useStart";
 //components
 import { ScratchGame } from "../../components/Scratch/ScratchGame/ScratchGame";
 import { ScratchWon } from "../../components/Scratch/ScratchWon/ScratchWon";
+import { ScratchStart } from "../../components/Scratch/Start/ScratchStart";
 //seo
 import { Helmet } from "react-helmet";
 //images
@@ -11,15 +14,14 @@ import image1 from "../../assets/taylor1.jpg";
 import image2 from "../../assets/taylor2.jpg";
 import image3 from "../../assets/taylor3.jpg";
 import image4 from "../../assets/taylor4.svg";
+//utils
+import { randomImage } from "../../utils/scratch";
 //styles
 import "./scratch.scss";
-import { randomImage } from "../../utils/scratch";
-import { ScratchStart } from "../../components/Scratch/Start/ScratchStart";
-import useSmash from "../../hooks/useSmash";
 
 const Scratch = () => {
   const { won, setWon } = useWon();
-  const { start, setStart } = useSmash();
+  const { start, setStart } = useStart();
   const images = [image1, image2, image3, image4];
   const messages = ["Ticket for a concert", "Album", "Spotify", "Tokens"];
 

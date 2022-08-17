@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Main from "./pages/main/Main";
 import Scratch from "./pages/scratch-game/Scratch";
 import Smash from "./pages/smash-button-game/Smash";
+import CreateGame from "./pages/create-game/CreateGame";
 import MoreGames from "./pages/more-games/MoreGames";
 //styles
 import "./styles/_globals.scss";
@@ -17,6 +18,7 @@ function App() {
         <Route path="smash-button-game" element={<Smash />} />
         <Route path="scratch-game" element={<Scratch />} />
         <Route path="more-games" element={<MoreGames />} />
+        <Route path="create-game" element={<CreateGame />} />
       </Routes>
     </div>
   );

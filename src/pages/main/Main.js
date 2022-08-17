@@ -23,6 +23,9 @@ const Main = () => {
         <Link to="/scratch-game">
           <button className="main-btn blue"></button>
         </Link>
+        <Link to="/create-game">
+          <button className="main-btn green"></button>
+        </Link>
       </div>
       <h1 className="main-title text">yambo</h1>
     </div>

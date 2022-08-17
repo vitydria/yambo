@@ -1,0 +1,13 @@
+.btn-container {
+  display: flex;
+}
+
+.step-container {
+  display: flex;
+  flex-direction: column;
+  grid-row: 2 / span 1;
+}
+
+.step-btn {
+  width: 25%;
+}

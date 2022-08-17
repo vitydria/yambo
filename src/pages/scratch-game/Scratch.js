@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 //hooks
 import useWon from "../../hooks/useWon";
-import useSmash from "../../hooks/useSmash";
 import useStart from "../../hooks/useStart";
 //components
 import { ScratchGame } from "../../components/Scratch/ScratchGame/ScratchGame";

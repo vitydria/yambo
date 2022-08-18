@@ -7,10 +7,10 @@ export const StepOne = ({ nextStep }) => {
       <div className="step-container">
         <h1 className="text title">Choose your game</h1>
         <div className="btn-container">
-          <button className="button" classNameonClick={nextStep}>
+          <button className="button step-btn" onClick={nextStep}>
             Scratch
           </button>
-          <button className="button" onClick={nextStep}>
+          <button className="button step-btn" disabled onClick={nextStep}>
             Smash
           </button>
         </div>

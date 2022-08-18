@@ -1,0 +1,18 @@
+.upload-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  grid-row: 2 / span 1;
+}
+
+.upload-label {
+  margin: 0.5rem 0;
+  border-style: dashed;
+  padding: 0.5rem;
+  border-color: #5eb8fa;
+}
+
+.upload-input {
+  display: none;
+}

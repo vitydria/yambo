@@ -1,8 +1,4 @@
 .upload-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   grid-row: 2 / span 1;
 }
 
@@ -11,6 +7,11 @@
   border-style: dashed;
   padding: 0.5rem;
   border-color: #5eb8fa;
+}
+
+.input-error {
+  color: red;
+  margin: 0;
 }
 
 .upload-input {

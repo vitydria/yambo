@@ -14,26 +14,17 @@ const gameSchema = yup
   })
   .required();
 
-export const StepOne = ({ nextStep }) => {
-  const {
-    setValue,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
+const StepOne = ({ nextStep, handleForm }) => {
+  const { setValue, handleSubmit } = useForm({
     resolver: yupResolver(gameSchema),
   });
 
-  const setGame = (game) => {
-    setValue("gameSelected", game);
-  };
-
   const onSubmit = (data) => {
-    console.log("data", data);
     if (data.gameSelected) {
+      handleForm(data);
       nextStep();
     }
   };
-
   return (
     <>
       <div className="step-container">
@@ -65,3 +56,5 @@ export const StepOne = ({ nextStep }) => {
     </>
   );
 };
+
+export default StepOne;

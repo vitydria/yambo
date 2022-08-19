@@ -1,8 +1,7 @@
 import React from "react";
 //styles
 import "./createStart.scss";
-
-export const CreateStart = ({ setStart }) => {
+const CreateStart = ({ setStart }) => {
   const start = () => {
     setStart(true);
   };
@@ -18,3 +17,5 @@ export const CreateStart = ({ setStart }) => {
     </>
   );
 };
+
+export default CreateStart;

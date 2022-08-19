@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 //components
 import FormContainer from "../../Form/FormContainer/FormContainer";
 //react-hook-form
@@ -14,10 +13,7 @@ const schema = yup
     images: yup
       .mixed()
       .test("files", "You have to upload four images", (value) => {
-        if (value && value?.length !== 4) {
-          return false;
-        }
-        return true;
+        return !(value && value?.length !== 4);
       })
       .test("fileSize", "Some image size is too large", (value) => {
         if (value && value?.length > 0) {
@@ -50,10 +46,9 @@ const schema = yup
   })
   .required();
 
-export const StepTwo = ({ nextStep }) => {
+const StepTwo = ({ nextStep, handleForm }) => {
   const {
     register,
-    getValues,
     handleSubmit,
     formState: { errors },
   } = useForm({
@@ -61,7 +56,8 @@ export const StepTwo = ({ nextStep }) => {
   });
 
   const onSubmit = (data) => {
-    console.log("data", data);
+    handleForm(data);
+    nextStep();
   };
   return (
     <>
@@ -78,7 +74,14 @@ export const StepTwo = ({ nextStep }) => {
           <label className="text upload-label" htmlFor="upload-files">
             CHOOSE FILES
           </label>
-          <button type="submit" className="button">
+          {errors?.images?.message && (
+            <p className="input-error">{errors?.images?.message}</p>
+          )}
+          <button
+            type="submit"
+            className="button"
+            style={{ marginTop: "50px" }}
+          >
             Next
           </button>
         </FormContainer>
@@ -86,3 +89,5 @@ export const StepTwo = ({ nextStep }) => {
     </>
   );
 };
+
+export default StepTwo;

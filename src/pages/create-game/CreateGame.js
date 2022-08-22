@@ -18,8 +18,6 @@ const CreateGame = () => {
   const { form, handleForm } = useForm();
   const [gameUrl, setGameUrl] = useState();
 
-  console.log("game url: ", gameUrl);
-
   useEffect(() => {
     if (step === 3) {
       getUrl(form).then((url) => setGameUrl(url));

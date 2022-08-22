@@ -7,7 +7,7 @@ import "./stepFour.scss";
 const StepFour = ({ gameUrl }) => {
   const copyToClipboard = () => {
     navigator.clipboard.writeText(
-      `https://moonlit-valkyrie-314b94.netlify.app/scratch-game/${gameUrl}`
+      `https://moonlit-valkyrie-314b94.netlify.app/${gameUrl}`
     );
   };
 

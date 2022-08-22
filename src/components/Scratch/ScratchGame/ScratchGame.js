@@ -2,10 +2,10 @@ import React from "react";
 //components
 import ScratchOff from "../ScratchOff/ScratchOff";
 //style
-
+import image from "../../../assets/image1.svg";
 import "./scratchGame.scss";
 
-export const ScratchGame = ({ setWon, image }) => {
+export const ScratchGame = ({ setWon }) => {
   const youWon = () => {
     setWon(true);
   };

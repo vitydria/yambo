@@ -1,12 +1,42 @@
-import React from "react";
+import { useEffect } from "react";
 //react-router
-import { Link } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
+//hooks
+import { useSettingsContext } from "../../hooks/useSettingsContext.js";
 //seo
 import { Helmet } from "react-helmet";
+//utils
+import getQueryParams from "../../utils/queryparams";
 //styles
 import "./main.scss";
 
 const Main = () => {
+  const [searchParams] = useSearchParams();
+  const gameSettings = getQueryParams(searchParams);
+  const { settings, setSettings } = useSettingsContext();
+
+  let navigate = useNavigate();
+
+  useEffect(() => {
+    setSettings(gameSettings);
+  }, []);
+
+  useEffect(() => {
+    let timer;
+
+    if (settings.game === "scratch") {
+      timer = setTimeout(() => {
+        navigate("/scratch-game", { replace: true });
+      }, 500);
+    }
+
+    return () => {
+      if (timer) {
+        clearTimeout(timer);
+      }
+    };
+  }, [settings]);
+
   return (
     <div className="main">
       <Helmet>
@@ -16,17 +46,6 @@ const Main = () => {
         />
         <title>Yambo</title>
       </Helmet>
-      <div className="main-btn-cont">
-        <Link to="/smash-button-game">
-          <button className="main-btn gold"></button>
-        </Link>
-        <Link to="/scratch-game">
-          <button className="main-btn blue"></button>
-        </Link>
-        <Link to="/create-game">
-          <button className="main-btn green"></button>
-        </Link>
-      </div>
       <h1 className="main-title text">yambo</h1>
     </div>
   );

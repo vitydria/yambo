@@ -296,6 +296,6 @@ export function eraseScratchLine(
   setComplete(true);
 }
 
-export function randomImage() {
+export function randomPrize() {
   return Math.floor(Math.random() * (3 + 1));
 }

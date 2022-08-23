@@ -19,10 +19,11 @@ export const ScratchWon = ({ win, index }) => {
     <div className="won-container">
       <Confetti recycle={false} />
       <p className="text title margin-title">You Win!</p>
-      <ScratchImage image={image} win={win} />
-      <p className="text token-size">{`$${
-        settings.prizeArray[index.current]
-      } Amazon Gift Card`}</p>
+      <ScratchImage
+        image={`https://i.imgur.com/${settings.imageArray[index]}`}
+        win={win}
+      />
+      <p className="text token-size">{`$${settings.prizeArray[index]} Amazon Gift Card`}</p>
       <Link
         className="button"
         to="/more-games"

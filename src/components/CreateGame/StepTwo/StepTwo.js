@@ -2,6 +2,8 @@
 import FormContainer from "../../Form/FormContainer/FormContainer";
 //react-hook-form
 import { useForm } from "react-hook-form";
+//api
+import uploadImage from "../../../api/image";
 //yup
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -55,8 +57,15 @@ const StepTwo = ({ nextStep, handleForm }) => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data) => {
-    handleForm(data);
+  const onSubmit = async (data) => {
+    const imagesArray = [];
+
+    for (let i = 0; i < data.images.length; i++) {
+      const response = await uploadImage(data.images[i]);
+      imagesArray.push(response.data.link.slice(20));
+    }
+
+    handleForm({ images: imagesArray });
     nextStep();
   };
   return (

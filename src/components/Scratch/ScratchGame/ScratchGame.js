@@ -1,11 +1,14 @@
 import React from "react";
+import { useSettingsContext } from "../../../hooks/useSettingsContext";
 //components
 import ScratchOff from "../ScratchOff/ScratchOff";
 //style
-import image from "../../../assets/image1.svg";
 import "./scratchGame.scss";
 
-export const ScratchGame = ({ setWon }) => {
+export const ScratchGame = ({ setWon, index }) => {
+  const { settings } = useSettingsContext();
+  console.log(index);
+  console.log(settings.imageArray[index]);
   const youWon = () => {
     setWon(true);
   };
@@ -15,7 +18,10 @@ export const ScratchGame = ({ setWon }) => {
       <p className="text host header">@taylorswift presents</p>
       <div className="scratch-img-cont">
         <p className="text title wxyz">Scratch to Win!</p>
-        <ScratchOff background={image} onfinished={youWon} />
+        <ScratchOff
+          background={`https://i.imgur.com/${settings.imageArray[index]}`}
+          onfinished={youWon}
+        />
       </div>
     </>
   );

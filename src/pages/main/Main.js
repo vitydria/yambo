@@ -14,6 +14,7 @@ const Main = () => {
   const [searchParams] = useSearchParams();
   const gameSettings = getQueryParams(searchParams);
   const { settings, setSettings } = useSettingsContext();
+  console.log(settings);
 
   let navigate = useNavigate();
 

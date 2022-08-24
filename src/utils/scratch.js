@@ -49,6 +49,7 @@ export function loadImage(propString, setData) {
   }
   // Handle Urls
   const layerImage = new Image();
+  layerImage.crossOrigin = "Anonymous";
 
   layerImage.onload = () => {
     setData({

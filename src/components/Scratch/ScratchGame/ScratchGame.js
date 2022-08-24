@@ -7,8 +7,6 @@ import "./scratchGame.scss";
 
 export const ScratchGame = ({ setWon, index }) => {
   const { settings } = useSettingsContext();
-  console.log(index);
-  console.log(settings.imageArray[index]);
   const youWon = () => {
     setWon(true);
   };
@@ -20,6 +18,8 @@ export const ScratchGame = ({ setWon, index }) => {
         <p className="text title wxyz">Scratch to Win!</p>
         <ScratchOff
           background={`https://i.imgur.com/${settings.imageArray[index]}`}
+          width={300}
+          height={300}
           onfinished={youWon}
         />
       </div>

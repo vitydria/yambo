@@ -16,7 +16,7 @@ const uploadImage = async (image) => {
     const data = await fetch(
       "https://api.imgur.com/3/upload",
       requestOptions
-    ).then((response) => response.json());
+    ).then((response) => console.log(response));
 
     return data;
   } catch (e) {

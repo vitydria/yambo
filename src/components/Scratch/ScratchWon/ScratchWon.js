@@ -1,16 +1,15 @@
 import React from "react";
+//router-dom
+import { Link } from "react-router-dom";
+//hooks
+import { useSettingsContext } from "../../../hooks/useSettingsContext";
 //components
 import { ScratchImage } from "../ScratchImage/ScratchImage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
 import Confetti from "react-confetti";
-//router-dom
-import { Link } from "react-router-dom";
 //styles
 import "./scratchWon.scss";
-
-import image from "../../../assets/image1.svg";
-import { useSettingsContext } from "../../../hooks/useSettingsContext";
 
 export const ScratchWon = ({ win, index }) => {
   const { settings } = useSettingsContext();

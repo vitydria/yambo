@@ -17,7 +17,6 @@ const Scratch = () => {
   const { won, setWon } = useWon();
   const { start, setStart } = useStart();
   const index = useRef(randomPrize());
-  console.log(index.current);
 
   return (
     <div className={`scratch ${won ? "scratch-won" : ""}`}>

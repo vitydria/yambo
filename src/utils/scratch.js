@@ -49,6 +49,7 @@ export function loadImage(propString, setData) {
   }
   // Handle Urls
   const layerImage = new Image();
+  layerImage.crossOrigin = "Anonymous";
 
   layerImage.onload = () => {
     setData({
@@ -296,6 +297,6 @@ export function eraseScratchLine(
   setComplete(true);
 }
 
-export function randomImage() {
+export function randomPrize() {
   return Math.floor(Math.random() * (3 + 1));
 }

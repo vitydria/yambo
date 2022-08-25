@@ -3,6 +3,7 @@
 .canvas-style {
   border: 10px solid #ffffff;
   border-radius: 30px;
+  object-fit: contain;
 }
 
 @media (max-width: 400px) {

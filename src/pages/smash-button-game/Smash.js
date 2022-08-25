@@ -10,9 +10,11 @@ import { SmashButtonGame } from "../../components/SmashButton/SmashButtonGame/Sm
 import { SmashWon } from "../../components/SmashButton/SmashWon/SmashWon";
 //style
 import "./smash.scss";
+import useStart from "../../hooks/useStart";
 
 const Smash = () => {
-  const { start, setStart, clicks, setClicks } = useSmash();
+  const { clicks, setClicks } = useSmash();
+  const { start, setStart } = useStart();
   const { won, setWon } = useWon();
 
   return (

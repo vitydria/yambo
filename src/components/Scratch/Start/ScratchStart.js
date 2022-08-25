@@ -1,4 +1,6 @@
 import React from "react";
+//context
+import { useSettingsContext } from "../../../hooks/useSettingsContext";
 //components
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrophy } from "@fortawesome/free-solid-svg-icons";
@@ -6,6 +8,8 @@ import { faTrophy } from "@fortawesome/free-solid-svg-icons";
 import "./scratchStart.scss";
 
 export const ScratchStart = ({ setStart }) => {
+  const { settings } = useSettingsContext();
+
   return (
     <>
       <p className="text host header">@friendlyFriends presents...</p>
@@ -15,10 +19,10 @@ export const ScratchStart = ({ setStart }) => {
           <p className="text prize-title">
             Prizes <FontAwesomeIcon icon={faTrophy} />
           </p>
-          <p className="text prize-desc">#1 Ticket for a concert</p>
-          <p className="text prize-desc">#2 Album</p>
-          <p className="text prize-desc">#3 Spotify premium</p>
-          <p className="text prize-desc">#4 Tokens</p>
+          <p className="text prize-desc">{`$${settings.prizes[0]} Amazon Gift Card`}</p>
+          <p className="text prize-desc">{`$${settings.prizes[1]} Amazon Gift Card`}</p>
+          <p className="text prize-desc">{`$${settings.prizes[2]} Amazon Gift Card`}</p>
+          <p className="text prize-desc">{`${settings.prizes[3]} Tokens`}</p>
         </div>
         <button
           className="button"

@@ -8,8 +8,10 @@
 
 .btn-container-four {
   display: flex;
-  width: 100vw;
+  width: 80vw;
+  gap: 0.75rem;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
 }
 

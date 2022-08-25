@@ -1,11 +1,17 @@
 .upload-container {
   grid-row: 2 / span 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .upload-label {
   margin: 0.5rem 0;
   border-style: dashed;
   padding: 0.5rem;
+  background-color: transparent;
+  text-transform: uppercase;
   border-color: #5eb8fa;
 }
 

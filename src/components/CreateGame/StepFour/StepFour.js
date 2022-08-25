@@ -12,7 +12,7 @@ const StepFour = ({ gameUrl }) => {
   return (
     <div className="game-container">
       <p className="text">Your game is created, enjoy</p>
-      <div className="btn-container">
+      <div className="btn-container-four">
         <button className="button" onClick={copyToClipboard}>
           Click to copy link to clipboard
         </button>

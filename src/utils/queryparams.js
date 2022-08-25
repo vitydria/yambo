@@ -9,10 +9,10 @@ const getQueryParams = (searchParams) => {
   const imageThree = searchParams.get("imageThree");
   const imageFour = searchParams.get("imageFour");
 
-  const prizeArray = [prizeOne, prizeTwo, prizeThree, prizeFour];
-  const imageArray = [imageOne, imageTwo, imageThree, imageFour];
+  const prizes = [prizeOne, prizeTwo, prizeThree, prizeFour];
+  const images = [imageOne, imageTwo, imageThree, imageFour];
 
-  return { game, prizeArray, imageArray };
+  return { game, prizes, images };
 };
 
 export default getQueryParams;

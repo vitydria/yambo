@@ -10,14 +10,13 @@ import StepTwo from "../../components/CreateGame/StepTwo/StepTwo";
 import StepThree from "../../components/CreateGame/StepThree/StepThree";
 import StepFour from "../../components/CreateGame/StepFour/StepFour";
 //utils
-import getUrl from "../../utils/url";
+import { getUrl } from "../../utils/url";
 
 const CreateGame = () => {
   const { start, setStart } = useStart();
   const { step, nextStep } = useStep();
   const { form, handleForm } = useForm();
   const [gameUrl, setGameUrl] = useState();
-
   useEffect(() => {
     if (step === 3) {
       getUrl(form).then((url) => setGameUrl(url));

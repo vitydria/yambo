@@ -19,10 +19,10 @@ export const ScratchStart = ({ setStart }) => {
           <p className="text prize-title">
             Prizes <FontAwesomeIcon icon={faTrophy} />
           </p>
-          <p className="text prize-desc">{`$${settings.prizeArray[0]} Amazon Gift Card`}</p>
-          <p className="text prize-desc">{`$${settings.prizeArray[1]} Amazon Gift Card`}</p>
-          <p className="text prize-desc">{`$${settings.prizeArray[2]} Amazon Gift Card`}</p>
-          <p className="text prize-desc">{`${settings.prizeArray[3]} Tokens`}</p>
+          <p className="text prize-desc">{`$${settings.prizes[0]} Amazon Gift Card`}</p>
+          <p className="text prize-desc">{`$${settings.prizes[1]} Amazon Gift Card`}</p>
+          <p className="text prize-desc">{`$${settings.prizes[2]} Amazon Gift Card`}</p>
+          <p className="text prize-desc">{`${settings.prizes[3]} Tokens`}</p>
         </div>
         <button
           className="button"

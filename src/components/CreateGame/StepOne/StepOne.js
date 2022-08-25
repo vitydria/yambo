@@ -30,7 +30,7 @@ const StepOne = ({ nextStep, handleForm }) => {
       <div className="step-container">
         <FormContainer onSubmit={handleSubmit(onSubmit)}>
           <h1 className="text title">Choose your game</h1>
-          <div className="btn-container">
+          <div className="btn-container-one">
             <button
               type="submit"
               className="button step-btn"

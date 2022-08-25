@@ -2,6 +2,8 @@ import React from "react";
 import { useSettingsContext } from "../../../hooks/useSettingsContext";
 //components
 import ScratchOff from "../ScratchOff/ScratchOff";
+//utils
+import { baseUrl } from "../../../utils/url";
 //style
 import "./scratchGame.scss";
 
@@ -17,7 +19,7 @@ export const ScratchGame = ({ setWon, index }) => {
       <div className="scratch-img-cont">
         <p className="text title wxyz">Scratch to Win!</p>
         <ScratchOff
-          background={`https://i.imgur.com/${settings.imageArray[index]}`}
+          background={`${baseUrl}${settings.images[index]}`}
           width={300}
           height={300}
           onfinished={youWon}

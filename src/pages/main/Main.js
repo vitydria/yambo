@@ -15,6 +15,7 @@ const Main = () => {
   const gameSettings = getQueryParams(searchParams);
   const { settings, setSettings } = useSettingsContext();
   let navigate = useNavigate();
+  console.log("settings: ", settings.game);
 
   useEffect(() => {
     setSettings(gameSettings);
@@ -23,13 +24,13 @@ const Main = () => {
   useEffect(() => {
     let timer;
 
-    if (settings.game === null) {
+    if (settings.game === "unset") {
       timer = setTimeout(() => {
         navigate("/create-game", { replace: true });
       }, 500);
     }
 
-    if (settings.game === "scratch") {
+    if (settings.game === "1") {
       timer = setTimeout(() => {
         navigate("/scratch-game", { replace: true });
       }, 500);

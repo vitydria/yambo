@@ -1,3 +1,4 @@
+import { useState } from "react";
 //hooks
 import useImages from "../../../hooks/useImages";
 //utils
@@ -7,10 +8,16 @@ import "./stepTwo.scss";
 
 const StepTwo = ({ nextStep, handleForm }) => {
   const { images, setImages } = useImages();
+  const { buttonClicked, setButtonClicked } = useState(false);
 
   const submitImages = () => {
-    handleForm({ images: images });
-    nextStep();
+    if (images.length === 4) {
+      setButtonClicked(false);
+      handleForm({ images: images });
+      nextStep();
+    } else {
+      setButtonClicked(true);
+    }
   };
   return (
     <>
@@ -19,7 +26,7 @@ const StepTwo = ({ nextStep, handleForm }) => {
         <button
           className="text upload-label"
           onClick={() => {
-            handleOpenWidget(images.length, setImages);
+            handleOpenWidget(images.length, setImages, 4 - images.length);
           }}
         >
           Choose files
@@ -29,6 +36,7 @@ const StepTwo = ({ nextStep, handleForm }) => {
             You have already loaded four images, click next
           </p>
         )}
+        {buttonClicked && <p></p>}
 
         <button
           className="button"

@@ -1,6 +1,3 @@
-//cloudinary
-import { AdvancedImage } from "@cloudinary/react";
-import { Cloudinary } from "@cloudinary/url-gen";
 //react-router
 import { Routes, Route } from "react-router-dom";
 //provider
@@ -16,15 +13,6 @@ import "./styles/_globals.scss";
 import "./styles/_variables.scss";
 
 function App() {
-  const cld = new Cloudinary({
-    cloud: {
-      cloudName: "crazy-imagine",
-    },
-    url: {
-      secureDistribution: "www.example.com",
-      secure: true,
-    },
-  });
   return (
     <div className="App">
       <SettingsProvider>

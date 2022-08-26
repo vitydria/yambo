@@ -1,18 +1,20 @@
 const getQueryParams = (searchParams) => {
-  const game = searchParams.get("game");
-  const prizeOne = searchParams.get("prizeOne");
-  const prizeTwo = searchParams.get("prizeTwo");
-  const prizeThree = searchParams.get("prizeThree");
-  const prizeFour = searchParams.get("prizeFour");
-  const imageOne = searchParams.get("imageOne");
-  const imageTwo = searchParams.get("imageTwo");
-  const imageThree = searchParams.get("imageThree");
-  const imageFour = searchParams.get("imageFour");
-
-  const prizes = [prizeOne, prizeTwo, prizeThree, prizeFour];
-  const images = [imageOne, imageTwo, imageThree, imageFour];
-
-  return { game, prizes, images };
+  if (searchParams.get("g") !== null) {
+    const query = window.atob(searchParams.get("g"));
+    console.log(query);
+    const settings = query.split("/");
+    const game = settings[0];
+    console.log(settings[1]);
+    const prizes = parseInt(settings[1], 16)
+      .toString()
+      .match(/.{1,2}/g);
+    const images = [settings[2], settings[3], settings[4], settings[5]];
+    console.log(images);
+    return { game, prizes, images };
+  } else {
+    const game = "unset";
+    return { game };
+  }
 };
 
 export default getQueryParams;

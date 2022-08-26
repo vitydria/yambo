@@ -16,9 +16,6 @@ const StepFour = ({ gameUrl }) => {
         <button className="button" onClick={copyToClipboard}>
           Copy URL game
         </button>
-        <Link to="/" className="button">
-          Ok
-        </Link>
       </div>
     </div>
   );

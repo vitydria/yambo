@@ -10,21 +10,28 @@ import "./stepThree.scss";
 const prizeSchema = yup
   .object({
     firstPrize: yup
-      .string()
-      .required("You need to set the 1st prize")
-      .matches(/^\d{1,2}$/, "Only máx two digits number"),
+      .number()
+      .typeError("The prize must be a number")
+      .required("You need to set the 1st prize", "max")
+      .max(99, "Only máx 99 tokens"),
     secondPrize: yup
-      .string()
+      .number()
+      .typeError("The prize must be a number")
       .required("You need to set the 2nd prize")
-      .matches(/^\d{1,2}$/, "Only máx two digits number"),
+      .lessThan(yup.ref("firstPrize"), "Prize must be minus than first prize"),
     thirdPrize: yup
-      .string()
+      .number()
+      .typeError("The prize must be a number")
       .required("You need to set the 3rd prize")
-      .matches(/^\d{1,2}$/, "Only máx two digits number"),
+      .lessThan(
+        yup.ref("secondPrize"),
+        "Prize must be minus than second prize"
+      ),
     fourthPrize: yup
-      .string()
+      .number()
+      .typeError("The prize must be a number")
       .required("You need to set the 4th prize")
-      .matches(/^\d{1,2}$/, "Only máx two digits number"),
+      .max(99, "Only máx 99 tokens"),
   })
   .required();
 

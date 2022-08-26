@@ -8,7 +8,7 @@ import "./stepTwo.scss";
 
 const StepTwo = ({ nextStep, handleForm }) => {
   const { images, setImages } = useImages();
-  const { buttonClicked, setButtonClicked } = useState(false);
+  const [buttonClicked, setButtonClicked] = useState(false);
 
   const submitImages = () => {
     if (images.length === 4) {
@@ -36,7 +36,9 @@ const StepTwo = ({ nextStep, handleForm }) => {
             You have already loaded four images, click next
           </p>
         )}
-        {buttonClicked && <p></p>}
+        {buttonClicked && images.length < 4 && (
+          <p className="text">You need to upload {4 - images.length} images</p>
+        )}
 
         <button
           className="button"

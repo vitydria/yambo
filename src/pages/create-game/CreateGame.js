@@ -25,7 +25,8 @@ const CreateGame = () => {
 
   return (
     <div className="layout">
-      {!start && <CreateStart setStart={setStart} />}
+      <StepThree nextStep={nextStep} handleForm={handleForm} />
+      {/* {!start && <CreateStart setStart={setStart} />}
       {start && step === 0 && (
         <StepOne nextStep={nextStep} handleForm={handleForm} />
       )}
@@ -41,7 +42,7 @@ const CreateGame = () => {
           handleForm={handleForm}
           gameUrl={gameUrl}
         />
-      )}
+      )} */}
     </div>
   );
 };

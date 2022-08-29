@@ -7,8 +7,9 @@ import handleOpenWidget from "../../../utils/cloudinary";
 import "./stepTwo.scss";
 
 const StepTwo = ({ nextStep, handleForm }) => {
-  const { images, setImages } = useImages();
+  const { images, handleImages } = useImages();
   const [buttonClicked, setButtonClicked] = useState(false);
+  console.log(images);
 
   const submitImages = () => {
     if (images.length === 4) {
@@ -26,7 +27,7 @@ const StepTwo = ({ nextStep, handleForm }) => {
         <button
           className="text upload-label"
           onClick={() => {
-            handleOpenWidget(images.length, setImages, 4 - images.length);
+            handleOpenWidget(images.length, handleImages, 4 - images.length);
           }}
         >
           Choose files

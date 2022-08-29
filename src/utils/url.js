@@ -13,5 +13,6 @@ export const getUrl = async (form) => {
   );
 
   url = `?g=${encodeURL}`;
+
   return url;
 };

@@ -13,7 +13,7 @@ const prizeSchema = yup
       .number()
       .typeError("The prize must be a number")
       .required("You need to set the 1st prize", "max")
-      .max(99, "Only máx 99 tokens"),
+      .max(99, "Only max 99 tokens"),
     secondPrize: yup
       .number()
       .typeError("The prize must be a number")
@@ -31,7 +31,7 @@ const prizeSchema = yup
       .number()
       .typeError("The prize must be a number")
       .required("You need to set the 4th prize")
-      .max(99, "Only máx 99 tokens"),
+      .max(99, "Only max 99 tokens"),
   })
   .required();
 

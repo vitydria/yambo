@@ -15,7 +15,6 @@ const Main = () => {
   const gameSettings = getQueryParams(searchParams);
   const { settings, setSettings } = useSettingsContext();
   let navigate = useNavigate();
-  console.log("settings: ", settings.game);
 
   useEffect(() => {
     setSettings(gameSettings);

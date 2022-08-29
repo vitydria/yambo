@@ -26,7 +26,7 @@ const FONTS = {
   },
 };
 
-const handleOpenWidget = (length, setImages, loads) => {
+const handleOpenWidget = (length, handleImage, loads) => {
   let myWidget = window.cloudinary.createUploadWidget(
     {
       cloudName: "crazy-imagine",
@@ -43,10 +43,9 @@ const handleOpenWidget = (length, setImages, loads) => {
     },
     (error, result) => {
       if (!error && result && result.event === "success") {
-        console.log(result);
         const newImage = result.info.url.slice(53);
         if (length < 4) {
-          setImages((imageArray) => [...imageArray, newImage]);
+          handleImage(newImage);
         }
       }
     }

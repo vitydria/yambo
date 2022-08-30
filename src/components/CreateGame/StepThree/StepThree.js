@@ -1,9 +1,14 @@
+import { useEffect } from "react";
 //react-hook-form
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+//hooks
+import usePrizes from "../../../hooks/usePrizes";
 //components
 import FormContainer from "../../Form/FormContainer/FormContainer";
+//debounce
+import debounce from "lodash.debounce";
 //style
 import "./stepThree.scss";
 
@@ -36,18 +41,26 @@ const prizeSchema = yup
   .required();
 
 const StepThree = ({ nextStep, handleForm }) => {
+  const { prizes, handlePrizes } = usePrizes();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(prizeSchema),
+    defaultValues: {
+      firstPrize: prizes.prizeOne,
+      secondPrize: prizes.prizeTwo,
+      thirdPrize: prizes.prizeThree,
+      fourthPrize: prizes.prizeFour,
+    },
   });
 
   const onSubmit = (data) => {
     handleForm(data);
     nextStep();
   };
+
   return (
     <div className="prize-container">
       <FormContainer onSubmit={handleSubmit(onSubmit)}>
@@ -57,7 +70,11 @@ const StepThree = ({ nextStep, handleForm }) => {
           $
           <input
             className="prize-input"
-            {...register("firstPrize")}
+            {...register("firstPrize", {
+              onBlur: (e) => {
+                handlePrizes("prizeOne", e.target.value);
+              },
+            })}
             type="text"
           />{" "}
           Amazon gift card
@@ -71,7 +88,11 @@ const StepThree = ({ nextStep, handleForm }) => {
           $
           <input
             className="prize-input"
-            {...register("secondPrize")}
+            {...register("secondPrize", {
+              onBlur: (e) => {
+                handlePrizes("prizeTwo", e.target.value);
+              },
+            })}
             type="text"
           />{" "}
           Amazon gift card
@@ -85,7 +106,11 @@ const StepThree = ({ nextStep, handleForm }) => {
           $
           <input
             className="prize-input"
-            {...register("thirdPrize")}
+            {...register("thirdPrize", {
+              onBlur: (e) => {
+                handlePrizes("prizeThree", e.target.value);
+              },
+            })}
             type="text"
           />{" "}
           Amazon gift card
@@ -98,7 +123,11 @@ const StepThree = ({ nextStep, handleForm }) => {
         <p className="text">
           <input
             className="prize-input"
-            {...register("fourthPrize")}
+            {...register("fourthPrize", {
+              onBlur: (e) => {
+                handlePrizes("prizeFour", e.target.value);
+              },
+            })}
             type="text"
           />{" "}
           Tokens

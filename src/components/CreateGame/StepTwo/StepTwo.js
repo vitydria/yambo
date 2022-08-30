@@ -1,15 +1,20 @@
 import { useState } from "react";
 //hooks
 import useImages from "../../../hooks/useImages";
+import useThumbnail from "../../../hooks/useThumbnail";
 //utils
 import handleOpenWidget from "../../../utils/cloudinary";
+import { baseUrl } from "../../../utils/url";
 //styles
 import "./stepTwo.scss";
 
 const StepTwo = ({ nextStep, handleForm }) => {
-  const { images, handleImages } = useImages();
+  const { images, handleImages, updateImages } = useImages();
+  const { thumbnail, handleThumbnails, updateThumbnails } = useThumbnail();
   const [buttonClicked, setButtonClicked] = useState(false);
-  console.log(images);
+
+  console.log("images", images);
+  console.log("thumbnails", thumbnail);
 
   const submitImages = () => {
     if (images.length === 4) {
@@ -20,6 +25,7 @@ const StepTwo = ({ nextStep, handleForm }) => {
       setButtonClicked(true);
     }
   };
+
   return (
     <>
       <div className="upload-container">
@@ -27,7 +33,12 @@ const StepTwo = ({ nextStep, handleForm }) => {
         <button
           className="text upload-label"
           onClick={() => {
-            handleOpenWidget(images.length, handleImages, 4 - images.length);
+            handleOpenWidget(
+              images.length,
+              handleImages,
+              handleThumbnails,
+              4 - images.length
+            );
           }}
         >
           Choose files
@@ -38,7 +49,32 @@ const StepTwo = ({ nextStep, handleForm }) => {
           </p>
         )}
         {buttonClicked && images.length < 4 && (
-          <p className="text">You need to upload {4 - images.length} images</p>
+          <p className="text">
+            You have to upload {4 - images.length} more images
+          </p>
+        )}
+        {thumbnail && (
+          <div className="thumbnail-container">
+            {thumbnail.map((thumb, index) => {
+              return (
+                <img
+                  key={index}
+                  src={`${baseUrl}/${thumb}`}
+                  alt={`#${index} thumbnail`}
+                  onClick={() => {
+                    handleOpenWidget(
+                      images.length,
+                      updateImages,
+                      updateThumbnails,
+                      1,
+                      true,
+                      index
+                    );
+                  }}
+                />
+              );
+            })}
+          </div>
         )}
 
         <button

@@ -17,12 +17,17 @@ const useImages = () => {
     setImages(newArr);
   };
 
+  const clearImages = () => {
+    setImages([]);
+    window.sessionStorage.removeItem("images");
+  };
+
   useEffect(() => {
     if (images.length > 0)
       window.sessionStorage.setItem("images", JSON.stringify(images));
   }, [images]);
 
-  return { images, handleImages, updateImages };
+  return { images, handleImages, updateImages, clearImages };
 };
 
 export default useImages;

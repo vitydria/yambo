@@ -9,7 +9,7 @@ import { baseUrl } from "../../../utils/url";
 import "./stepTwo.scss";
 
 const StepTwo = ({ nextStep, handleForm }) => {
-  const { images, handleImages, updateImages } = useImages();
+  const { images, handleImages, updateImages, clearImages } = useImages();
   const { thumbnail, handleThumbnails, updateThumbnails } = useThumbnail();
   const [buttonClicked, setButtonClicked] = useState(false);
 
@@ -45,11 +45,6 @@ const StepTwo = ({ nextStep, handleForm }) => {
             You have already loaded four images, click next
           </p>
         )}
-        {buttonClicked && images.length < 4 && (
-          <p className="text">
-            You have to upload {4 - images.length} more images
-          </p>
-        )}
         {thumbnail && (
           <div className="thumbnail-container">
             {thumbnail.map((thumb, index) => {
@@ -74,13 +69,20 @@ const StepTwo = ({ nextStep, handleForm }) => {
           </div>
         )}
 
-        <button
-          className="button"
-          style={{ marginTop: "50px" }}
-          onClick={submitImages}
-        >
-          Next
-        </button>
+        {buttonClicked && images.length < 4 && (
+          <p className="text-warning">
+            You have to upload {4 - images.length} more images
+          </p>
+        )}
+
+        <div className="btn-container">
+          <button className="button" onClick={clearImages}>
+            Clear
+          </button>
+          <button className="button" onClick={submitImages}>
+            Next
+          </button>
+        </div>
       </div>
     </>
   );

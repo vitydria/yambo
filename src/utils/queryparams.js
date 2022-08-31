@@ -1,3 +1,6 @@
+//utils
+import { randomPrize } from "./scratch";
+
 const getQueryParams = (searchParams) => {
   if (searchParams.get("g") !== null) {
     const query = window.atob(searchParams.get("g"));
@@ -14,7 +17,9 @@ const getQueryParams = (searchParams) => {
       `${urls[6]}/${urls[7]}`,
     ];
 
-    return { game, prizes, images };
+    const index = randomPrize();
+
+    return { game, prizes, images, index };
   } else {
     const game = "unset";
     return { game };

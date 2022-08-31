@@ -11,7 +11,6 @@ import getQueryParams from "../../utils/queryparams";
 import "./main.scss";
 
 const Main = () => {
-  localStorage.clear();
   sessionStorage.clear();
 
   const [searchParams] = useSearchParams();

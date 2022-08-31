@@ -7,8 +7,9 @@ import { baseUrl } from "../../../utils/url";
 //style
 import "./scratchGame.scss";
 
-export const ScratchGame = ({ setWon, index }) => {
+export const ScratchGame = ({ setWon }) => {
   const { settings } = useSettingsContext();
+  const { images, index } = settings;
   const youWon = () => {
     setWon(true);
   };
@@ -19,7 +20,7 @@ export const ScratchGame = ({ setWon, index }) => {
       <div className="scratch-img-cont">
         <p className="text title wxyz">Scratch to Win!</p>
         <ScratchOff
-          background={`${baseUrl}${settings.images[index]}`}
+          background={`${baseUrl}${images[index]}`}
           width={300}
           height={300}
           onfinished={youWon}

@@ -1,7 +1,7 @@
 import React from "react";
 //styles
 import "./createStart.scss";
-const CreateStart = ({ handleStart }) => {
+const CreateStart = ({ setStart }) => {
   return (
     <>
       <div className="create-container">
@@ -9,7 +9,7 @@ const CreateStart = ({ handleStart }) => {
         <button
           className="button"
           onClick={() => {
-            handleStart(true);
+            setStart(true);
           }}
         >
           START

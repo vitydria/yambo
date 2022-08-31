@@ -13,15 +13,16 @@ import { baseUrl } from "../../../utils/url";
 //styles
 import "./scratchWon.scss";
 
-export const ScratchWon = ({ win, index }) => {
+export const ScratchWon = ({ win }) => {
   const { settings } = useSettingsContext();
+  const { images, prizes, index } = settings;
 
   return (
     <div className="won-container">
       <Confetti recycle={false} />
       <p className="text title margin-title">You Win!</p>
-      <ScratchImage image={`${baseUrl}/${settings.images[index]}`} win={win} />
-      <p className="text token-size">{`$${settings.prizes[index]} Amazon Gift Card`}</p>
+      <ScratchImage image={`${baseUrl}/${images[index]}`} win={win} />
+      <p className="text token-size">{`$${prizes[index]} Amazon Gift Card`}</p>
       <Link
         className="button"
         to="/more-games"

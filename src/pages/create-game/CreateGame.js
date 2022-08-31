@@ -14,11 +14,12 @@ import StepFour from "../../components/CreateGame/StepFour/StepFour";
 import { getUrl } from "../../utils/url";
 
 const CreateGame = () => {
-  const { start, handleStart } = useStart();
+  const { start, setStart } = useStart();
   const context = useFormContext();
   const [gameUrl, setGameUrl] = useState();
 
   const { step, nextStep, form, handleForm } = context;
+
   useEffect(() => {
     if (step === 3) {
       getUrl(form).then((url) => setGameUrl(url));
@@ -27,7 +28,7 @@ const CreateGame = () => {
 
   return (
     <div className="layout">
-      {!start && <CreateStart handleStart={handleStart} />}
+      {!start && <CreateStart setStart={setStart} />}
       {start && step === 0 && (
         <StepOne nextStep={nextStep} handleForm={handleForm} />
       )}

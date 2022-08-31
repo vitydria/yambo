@@ -27,3 +27,12 @@
 .upload-input {
   display: none;
 }
+
+.btn-container {
+  display: flex;
+  margin-top: 2rem;
+  gap: 2%;
+  width: 100%;
+  padding: 0 1rem;
+  justify-content: center;
+}

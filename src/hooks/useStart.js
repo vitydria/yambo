@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const useStart = () => {
   const [start, setStart] = useState(
@@ -7,12 +7,11 @@ const useStart = () => {
       : false
   );
 
-  const handleStart = (state) => {
-    window.sessionStorage.setItem("start", JSON.stringify(state));
-    setStart(state);
-  };
+  useEffect(() => {
+    window.sessionStorage.setItem("start", JSON.stringify(start));
+  }, [start]);
 
-  return { start, setStart, handleStart };
+  return { start, setStart };
 };
 
 export default useStart;

@@ -32,7 +32,7 @@ const handleOpenWidget = (
   thumbnailsFunction,
   loads,
   changeImage = false,
-  index = 0
+  index = -1
 ) => {
   let myWidget = window.cloudinary.createUploadWidget(
     {
@@ -50,15 +50,14 @@ const handleOpenWidget = (
     },
     (error, result) => {
       if (!error && result && result.event === "success") {
-        console.log("result: ", result);
         const newImage = result.info.url.slice(53);
         const newThumbnail = result.info.thumbnail_url.slice(53);
-        if (length < 4 && !changeImage) {
+        if (length < 4 && !changeImage && index === -1) {
           imagesFunction(newImage);
           thumbnailsFunction(newThumbnail);
         }
 
-        if (changeImage) {
+        if (changeImage && index > -1) {
           imagesFunction(newImage, index);
           thumbnailsFunction(newThumbnail, index);
         }

@@ -1,13 +1,11 @@
 import React from "react";
-//react-router-dom
-// import { Link } from "react-router-dom";
 //styles
 import "./stepFour.scss";
 
 const StepFour = ({ gameUrl }) => {
   const copyToClipboard = () => {
-    window.localStorage.clear();
     navigator.clipboard.writeText(`${window.location.origin}/${gameUrl}`);
+    window.sessionStorage.clear();
   };
 
   return (

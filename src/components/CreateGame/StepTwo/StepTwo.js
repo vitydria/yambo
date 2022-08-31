@@ -13,9 +13,6 @@ const StepTwo = ({ nextStep, handleForm }) => {
   const { thumbnail, handleThumbnails, updateThumbnails } = useThumbnail();
   const [buttonClicked, setButtonClicked] = useState(false);
 
-  console.log("images", images);
-  console.log("thumbnails", thumbnail);
-
   const submitImages = () => {
     if (images.length === 4) {
       setButtonClicked(false);

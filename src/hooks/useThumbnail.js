@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const useThumbnail = () => {
   const [thumbnail, setThumbnail] = useState(
@@ -8,19 +8,19 @@ const useThumbnail = () => {
   );
 
   const handleThumbnails = (newThumbnail) => {
-    window.sessionStorage.setItem(
-      "thumbnails",
-      JSON.stringify([...thumbnail, newThumbnail])
-    );
     setThumbnail((thumbnails) => [...thumbnails, newThumbnail]);
   };
 
   const updateThumbnails = (newThumbnail, index) => {
     let newArr = [...thumbnail];
     newArr[index] = newThumbnail;
-    window.sessionStorage.setItem("thumbnails", JSON.stringify(newArr));
     setThumbnail(newArr);
   };
+
+  useEffect(() => {
+    if (thumbnail.length > 0)
+      window.sessionStorage.setItem("thumbnails", JSON.stringify(thumbnail));
+  }, [thumbnail]);
 
   return {
     thumbnail,

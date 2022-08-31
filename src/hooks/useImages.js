@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const useImages = () => {
   const [images, setImages] = useState(
@@ -8,19 +8,19 @@ const useImages = () => {
   );
 
   const handleImages = (newImage) => {
-    window.sessionStorage.setItem(
-      "images",
-      JSON.stringify([...images, newImage])
-    );
-    setImages((imageArray) => [...imageArray, newImage]);
+    setImages((thumbnails) => [...thumbnails, newImage]);
   };
 
   const updateImages = (newImage, index) => {
     let newArr = [...images];
     newArr[index] = newImage;
-    window.sessionStorage.setItem("images", JSON.stringify(newArr));
     setImages(newArr);
   };
+
+  useEffect(() => {
+    if (images.length > 0)
+      window.sessionStorage.setItem("images", JSON.stringify(images));
+  }, [images]);
 
   return { images, handleImages, updateImages };
 };

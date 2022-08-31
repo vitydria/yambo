@@ -25,8 +25,6 @@ const CreateGame = () => {
     }
   }, [step]);
 
-  console.log("form: ", form);
-
   return (
     <div className="layout">
       {!start && <CreateStart handleStart={handleStart} />}

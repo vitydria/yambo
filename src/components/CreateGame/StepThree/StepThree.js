@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 //react-hook-form
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -7,8 +6,6 @@ import * as yup from "yup";
 import usePrizes from "../../../hooks/usePrizes";
 //components
 import FormContainer from "../../Form/FormContainer/FormContainer";
-//debounce
-import debounce from "lodash.debounce";
 //style
 import "./stepThree.scss";
 

@@ -12,6 +12,8 @@ import "./main.scss";
 
 const Main = () => {
   localStorage.clear();
+  sessionStorage.clear();
+
   const [searchParams] = useSearchParams();
   const gameSettings = getQueryParams(searchParams);
   const { settings, setSettings } = useSettingsContext();

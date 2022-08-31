@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const usePrizes = () => {
   const [prizes, setPrizes] = useState(
@@ -17,9 +17,11 @@ const usePrizes = () => {
       oldState[key] = value;
       return oldState;
     });
-
-    window.sessionStorage.setItem("prizes", JSON.stringify(prizes));
   };
+
+  useEffect(() => {
+    window.sessionStorage.setItem("prizes", JSON.stringify(prizes));
+  }, [prizes]);
 
   return { prizes, setPrizes, handlePrizes };
 };

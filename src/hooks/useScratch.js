@@ -56,7 +56,8 @@ const useScratch = ({ width, height, background, foreground, onfinished }) => {
       scratchPosition,
       displaySize,
       complete,
-      setComplete
+      setComplete,
+      backgroundData
     );
   }, [
     context,
@@ -82,7 +83,7 @@ const useScratch = ({ width, height, background, foreground, onfinished }) => {
     if (complete && onfinished && backgroundData?.image?.complete) {
       onfinished();
     }
-  }, [backgroundData?.image?.complete, complete]);
+  }, [complete]);
 
   return { canvasReference, scratchPosition, setScratchPosition };
 };

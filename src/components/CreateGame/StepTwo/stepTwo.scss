@@ -15,6 +15,17 @@
   border-color: #5eb8fa;
 }
 
+.thumbnail-container {
+  display: flex;
+  width: 80%;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.thumbnail {
+  width: 25%;
+}
+
 .input-error {
   color: red;
   margin: 0;
@@ -22,4 +33,13 @@
 
 .upload-input {
   display: none;
+}
+
+.btn-container {
+  display: flex;
+  margin-top: 2rem;
+  gap: 2%;
+  width: 100%;
+  padding: 0 1rem;
+  justify-content: center;
 }

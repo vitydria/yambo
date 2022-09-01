@@ -11,6 +11,8 @@ import getQueryParams from "../../utils/queryparams";
 import "./main.scss";
 
 const Main = () => {
+  window.sessionStorage.clear();
+
   const [searchParams] = useSearchParams();
   const gameSettings = getQueryParams(searchParams);
   const { settings, setSettings } = useSettingsContext();
@@ -23,13 +25,13 @@ const Main = () => {
   useEffect(() => {
     let timer;
 
-    if (settings.game === null) {
+    if (settings.game === "unset") {
       timer = setTimeout(() => {
         navigate("/create-game", { replace: true });
       }, 500);
     }
 
-    if (settings.game === "scratch") {
+    if (settings.game === "1") {
       timer = setTimeout(() => {
         navigate("/scratch-game", { replace: true });
       }, 500);

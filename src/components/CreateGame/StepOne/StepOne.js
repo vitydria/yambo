@@ -35,7 +35,7 @@ const StepOne = ({ nextStep, handleForm }) => {
               type="submit"
               className="button step-btn"
               onClick={() => {
-                setValue("gameSelected", "scratch");
+                setValue("gameSelected", "1");
               }}
             >
               Scratch
@@ -45,7 +45,7 @@ const StepOne = ({ nextStep, handleForm }) => {
               className="button step-btn"
               disabled
               onClick={() => {
-                setValue("gameSelected", "smash");
+                setValue("gameSelected", "2");
               }}
             >
               Smash

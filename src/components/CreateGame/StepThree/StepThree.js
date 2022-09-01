@@ -2,6 +2,8 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+//hooks
+import usePrizes from "../../../hooks/usePrizes";
 //components
 import FormContainer from "../../Form/FormContainer/FormContainer";
 //style
@@ -10,37 +12,52 @@ import "./stepThree.scss";
 const prizeSchema = yup
   .object({
     firstPrize: yup
-      .string()
-      .required("You need to set the 1st prize")
-      .matches(/^\d{1,2}$/, "Only máx two digits number"),
+      .number()
+      .typeError("The prize must be a number")
+      .required("You need to set the 1st prize", "max")
+      .max(99, "Only max 99 tokens"),
     secondPrize: yup
-      .string()
+      .number()
+      .typeError("The prize must be a number")
       .required("You need to set the 2nd prize")
-      .matches(/^\d{1,2}$/, "Only máx two digits number"),
+      .lessThan(yup.ref("firstPrize"), "Prize must be minus than first prize"),
     thirdPrize: yup
-      .string()
+      .number()
+      .typeError("The prize must be a number")
       .required("You need to set the 3rd prize")
-      .matches(/^\d{1,2}$/, "Only máx two digits number"),
+      .lessThan(
+        yup.ref("secondPrize"),
+        "Prize must be minus than second prize"
+      ),
     fourthPrize: yup
-      .string()
+      .number()
+      .typeError("The prize must be a number")
       .required("You need to set the 4th prize")
-      .matches(/^\d{1,2}$/, "Only máx two digits number"),
+      .max(99, "Only max 99 tokens"),
   })
   .required();
 
 const StepThree = ({ nextStep, handleForm }) => {
+  const { prizes, handlePrizes } = usePrizes();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(prizeSchema),
+    defaultValues: {
+      firstPrize: prizes.prizeOne,
+      secondPrize: prizes.prizeTwo,
+      thirdPrize: prizes.prizeThree,
+      fourthPrize: prizes.prizeFour,
+    },
   });
 
   const onSubmit = (data) => {
     handleForm(data);
     nextStep();
   };
+
   return (
     <div className="prize-container">
       <FormContainer onSubmit={handleSubmit(onSubmit)}>
@@ -50,7 +67,11 @@ const StepThree = ({ nextStep, handleForm }) => {
           $
           <input
             className="prize-input"
-            {...register("firstPrize")}
+            {...register("firstPrize", {
+              onBlur: (e) => {
+                handlePrizes("prizeOne", e.target.value);
+              },
+            })}
             type="text"
           />{" "}
           Amazon gift card
@@ -64,7 +85,11 @@ const StepThree = ({ nextStep, handleForm }) => {
           $
           <input
             className="prize-input"
-            {...register("secondPrize")}
+            {...register("secondPrize", {
+              onBlur: (e) => {
+                handlePrizes("prizeTwo", e.target.value);
+              },
+            })}
             type="text"
           />{" "}
           Amazon gift card
@@ -78,7 +103,11 @@ const StepThree = ({ nextStep, handleForm }) => {
           $
           <input
             className="prize-input"
-            {...register("thirdPrize")}
+            {...register("thirdPrize", {
+              onBlur: (e) => {
+                handlePrizes("prizeThree", e.target.value);
+              },
+            })}
             type="text"
           />{" "}
           Amazon gift card
@@ -91,7 +120,11 @@ const StepThree = ({ nextStep, handleForm }) => {
         <p className="text">
           <input
             className="prize-input"
-            {...register("fourthPrize")}
+            {...register("fourthPrize", {
+              onBlur: (e) => {
+                handlePrizes("prizeFour", e.target.value);
+              },
+            })}
             type="text"
           />{" "}
           Tokens

@@ -56,7 +56,8 @@ const useScratch = ({ width, height, background, foreground, onfinished }) => {
       scratchPosition,
       displaySize,
       complete,
-      setComplete
+      setComplete,
+      backgroundData
     );
   }, [
     context,
@@ -79,7 +80,7 @@ const useScratch = ({ width, height, background, foreground, onfinished }) => {
   ]);
   // Invoke callback when complete
   useEffect(() => {
-    if (complete && onfinished) {
+    if (complete && onfinished && backgroundData?.image?.complete) {
       onfinished();
     }
   }, [complete]);

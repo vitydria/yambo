@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 //hooks
-import useStep from "../../hooks/useStep";
+
 import useStart from "../../hooks/useStart";
-import useForm from "../../hooks/useForm";
+//context
+import { useFormContext } from "../../hooks/useFormContext";
 //components
 import CreateStart from "../../components/CreateGame/CreateStart/CreateStart";
 import StepOne from "../../components/CreateGame/StepOne/StepOne";
@@ -14,9 +15,11 @@ import { getUrl } from "../../utils/url";
 
 const CreateGame = () => {
   const { start, setStart } = useStart();
-  const { step, nextStep } = useStep();
-  const { form, handleForm } = useForm();
+  const context = useFormContext();
   const [gameUrl, setGameUrl] = useState();
+
+  const { step, nextStep, form, handleForm } = context;
+
   useEffect(() => {
     if (step === 3) {
       getUrl(form).then((url) => setGameUrl(url));

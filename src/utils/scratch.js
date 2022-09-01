@@ -236,9 +236,10 @@ export function eraseScratchLine(
   scratchPosition,
   displaySize,
   complete,
-  setComplete
+  setComplete,
+  backgroundData
 ) {
-  if (!context || !scratchContext) {
+  if (!context || !scratchContext || !backgroundData?.image?.complete) {
     return;
   }
   if (

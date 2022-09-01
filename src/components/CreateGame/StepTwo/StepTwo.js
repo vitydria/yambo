@@ -2,16 +2,20 @@
 import useImages from "../../../hooks/useImages";
 //utils
 import handleOpenWidget from "../../../utils/cloudinary";
+import { baseUrl } from "../../../utils/url";
 //styles
 import "./stepTwo.scss";
 
 const StepTwo = ({ nextStep, handleForm }) => {
-  const { images, setImages } = useImages();
+  const { images, handleImages, updateImages, clearImages } = useImages();
 
   const submitImages = () => {
-    handleForm({ images: images });
-    nextStep();
+    if (images?.length === 4) {
+      handleForm({ images: images });
+      nextStep();
+    }
   };
+
   return (
     <>
       <div className="upload-container">
@@ -19,24 +23,45 @@ const StepTwo = ({ nextStep, handleForm }) => {
         <button
           className="text upload-label"
           onClick={() => {
-            handleOpenWidget(images.length, setImages);
+            handleOpenWidget(images?.length, handleImages, 4 - images.length);
           }}
         >
           Choose files
         </button>
-        {images?.length > 3 && (
-          <p className="text">
-            You have already loaded four images, click next
-          </p>
+        {images && (
+          <div className="thumbnail-container">
+            {images?.map((img, index) => {
+              return (
+                <img
+                  key={index}
+                  src={`${baseUrl}/${img}`}
+                  alt={`#${index} thumbnail`}
+                  className="thumbnail"
+                  onClick={() => {
+                    handleOpenWidget(
+                      images.length,
+                      updateImages,
+                      1,
+                      true,
+                      index
+                    );
+                  }}
+                />
+              );
+            })}
+          </div>
         )}
 
-        <button
-          className="button"
-          style={{ marginTop: "50px" }}
-          onClick={submitImages}
-        >
-          Next
-        </button>
+        <p className="text-warning">{images.length}/4 images uploaded</p>
+
+        <div className="btn-container">
+          <button className="button" onClick={clearImages}>
+            Clear
+          </button>
+          <button className="button" onClick={submitImages}>
+            Next
+          </button>
+        </div>
       </div>
     </>
   );

@@ -2,6 +2,17 @@ export const baseUrl = "https://res.cloudinary.com/crazy-imagine/image/upload/";
 
 export const getUrl = async (form) => {
   let url;
-  url = `?game=${form.gameSelected}&prizeOne=${form.firstPrize}&prizeTwo=${form.secondPrize}&prizeThree=${form.thirdPrize}&prizeFour=${form.fourthPrize}&imageOne=${form.images[0]}&imageTwo=${form.images[1]}&imageThree=${form.images[2]}&imageFour=${form.images[3]}`;
+
+  const prize = parseInt(
+    `${form.firstPrize}${form.secondPrize}${form.thirdPrize}${form.fourthPrize}`,
+    10
+  ).toString(16);
+
+  const encodeURL = window.btoa(
+    `${form.gameSelected}/${prize}/${form.images[0]}/${form.images[1]}/${form.images[2]}/${form.images[3]}`
+  );
+
+  url = `?g=${encodeURL}`;
+
   return url;
 };

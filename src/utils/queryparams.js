@@ -1,18 +1,29 @@
+//utils
+import { randomPrize } from "./scratch";
+
 const getQueryParams = (searchParams) => {
-  const game = searchParams.get("game");
-  const prizeOne = searchParams.get("prizeOne");
-  const prizeTwo = searchParams.get("prizeTwo");
-  const prizeThree = searchParams.get("prizeThree");
-  const prizeFour = searchParams.get("prizeFour");
-  const imageOne = searchParams.get("imageOne");
-  const imageTwo = searchParams.get("imageTwo");
-  const imageThree = searchParams.get("imageThree");
-  const imageFour = searchParams.get("imageFour");
+  if (searchParams.get("g") !== null) {
+    const query = window.atob(searchParams.get("g"));
+    let [game, tokens, ...urls] = query.split("/");
 
-  const prizes = [prizeOne, prizeTwo, prizeThree, prizeFour];
-  const images = [imageOne, imageTwo, imageThree, imageFour];
+    const prizes = parseInt(tokens, 16)
+      .toString()
+      .match(/.{1,2}/g);
 
-  return { game, prizes, images };
+    const images = [
+      `${urls[0]}/${urls[1]}`,
+      `${urls[2]}/${urls[3]}`,
+      `${urls[4]}/${urls[5]}`,
+      `${urls[6]}/${urls[7]}`,
+    ];
+
+    const index = randomPrize();
+
+    return { game, prizes, images, index };
+  } else {
+    const game = "unset";
+    return { game };
+  }
 };
 
 export default getQueryParams;

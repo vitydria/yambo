@@ -1,4 +1,3 @@
-import React, { useRef } from "react";
 //hooks
 import useWon from "../../hooks/useWon";
 import useStart from "../../hooks/useStart";
@@ -8,15 +7,12 @@ import { ScratchWon } from "../../components/Scratch/ScratchWon/ScratchWon";
 import { ScratchStart } from "../../components/Scratch/Start/ScratchStart";
 //seo
 import { Helmet } from "react-helmet";
-//utils
-import { randomPrize } from "../../utils/scratch";
 //styles
 import "./scratch.scss";
 
 const Scratch = () => {
   const { won, setWon } = useWon();
   const { start, setStart } = useStart();
-  const index = useRef(randomPrize());
 
   return (
     <div className={`scratch ${won ? "scratch-won" : ""}`}>
@@ -25,8 +21,8 @@ const Scratch = () => {
         <title>Scratch game</title>
       </Helmet>
       {!start && <ScratchStart setStart={setStart} />}
-      {!won && start && <ScratchGame setWon={setWon} index={index.current} />}
-      {won && <ScratchWon won={won} index={index.current} />}
+      {!won && start && <ScratchGame setWon={setWon} />}
+      {won && <ScratchWon won={won} />}
     </div>
   );
 };

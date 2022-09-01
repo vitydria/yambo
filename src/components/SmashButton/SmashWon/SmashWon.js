@@ -22,6 +22,7 @@ export const SmashWon = ({ won, clicks }) => {
           className="button"
           to="/more-games"
           style={{ textDecoration: "none", color: "white" }}
+          onClick={window.sessionStorage.clear()}
         >
           CONTINUE
           <FontAwesomeIcon icon={faArrowRightToBracket} />

@@ -17,6 +17,13 @@
 
 .thumbnail-container {
   display: flex;
+  width: 80%;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.thumbnail {
+  width: 25%;
 }
 
 .input-error {

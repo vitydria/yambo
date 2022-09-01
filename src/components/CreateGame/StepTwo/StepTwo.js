@@ -1,7 +1,6 @@
 import { useState } from "react";
 //hooks
 import useImages from "../../../hooks/useImages";
-import useThumbnail from "../../../hooks/useThumbnail";
 //utils
 import handleOpenWidget from "../../../utils/cloudinary";
 import { baseUrl } from "../../../utils/url";
@@ -10,11 +9,11 @@ import "./stepTwo.scss";
 
 const StepTwo = ({ nextStep, handleForm }) => {
   const { images, handleImages, updateImages, clearImages } = useImages();
-  const { thumbnail, handleThumbnails, updateThumbnails } = useThumbnail();
+
   const [buttonClicked, setButtonClicked] = useState(false);
 
   const submitImages = () => {
-    if (images.length === 4) {
+    if (images?.length === 4) {
       setButtonClicked(false);
       handleForm({ images: images });
       nextStep();
@@ -30,34 +29,24 @@ const StepTwo = ({ nextStep, handleForm }) => {
         <button
           className="text upload-label"
           onClick={() => {
-            handleOpenWidget(
-              images.length,
-              handleImages,
-              handleThumbnails,
-              4 - images.length
-            );
+            handleOpenWidget(images?.length, handleImages, 4 - images.length);
           }}
         >
           Choose files
         </button>
-        {images?.length > 3 && (
-          <p className="text">
-            You have already loaded four images, click next
-          </p>
-        )}
-        {thumbnail && (
+        {images && (
           <div className="thumbnail-container">
-            {thumbnail.map((thumb, index) => {
+            {images?.map((img, index) => {
               return (
                 <img
                   key={index}
-                  src={`${baseUrl}/${thumb}`}
+                  src={`${baseUrl}/${img}`}
                   alt={`#${index} thumbnail`}
+                  className="thumbnail"
                   onClick={() => {
                     handleOpenWidget(
                       images.length,
                       updateImages,
-                      updateThumbnails,
                       1,
                       true,
                       index
@@ -69,11 +58,7 @@ const StepTwo = ({ nextStep, handleForm }) => {
           </div>
         )}
 
-        {buttonClicked && images.length < 4 && (
-          <p className="text-warning">
-            You have to upload {4 - images.length} more images
-          </p>
-        )}
+        <p className="text-warning">{images.length}/4 images uploaded</p>
 
         <div className="btn-container">
           <button className="button" onClick={clearImages}>

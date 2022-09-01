@@ -29,7 +29,6 @@ const FONTS = {
 const handleOpenWidget = (
   length,
   imagesFunction,
-  thumbnailsFunction,
   loads,
   changeImage = false,
   index = -1
@@ -51,15 +50,12 @@ const handleOpenWidget = (
     (error, result) => {
       if (!error && result && result.event === "success") {
         const newImage = result.info.url.slice(53);
-        const newThumbnail = result.info.thumbnail_url.slice(53);
         if (length < 4 && !changeImage && index === -1) {
           imagesFunction(newImage);
-          thumbnailsFunction(newThumbnail);
         }
 
         if (changeImage && index > -1) {
           imagesFunction(newImage, index);
-          thumbnailsFunction(newThumbnail, index);
         }
       }
     }

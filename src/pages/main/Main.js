@@ -11,7 +11,7 @@ import getQueryParams from "../../utils/queryparams";
 import "./main.scss";
 
 const Main = () => {
-  sessionStorage.clear();
+  window.sessionStorage.clear();
 
   const [searchParams] = useSearchParams();
   const gameSettings = getQueryParams(searchParams);

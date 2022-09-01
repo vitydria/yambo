@@ -1,4 +1,3 @@
-import { useState } from "react";
 //hooks
 import useImages from "../../../hooks/useImages";
 //utils
@@ -10,15 +9,10 @@ import "./stepTwo.scss";
 const StepTwo = ({ nextStep, handleForm }) => {
   const { images, handleImages, updateImages, clearImages } = useImages();
 
-  const [buttonClicked, setButtonClicked] = useState(false);
-
   const submitImages = () => {
     if (images?.length === 4) {
-      setButtonClicked(false);
       handleForm({ images: images });
       nextStep();
-    } else {
-      setButtonClicked(true);
     }
   };
 

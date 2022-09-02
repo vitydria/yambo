@@ -13,17 +13,17 @@ const usePrizes = () => {
   );
 
   const handlePrizes = (key, value) => {
-    setPrizes((oldState) => {
-      oldState[key] = value;
-      return oldState;
-    });
+    setPrizes((prevState) => ({
+      ...prevState,
+      [key]: value,
+    }));
   };
 
   useEffect(() => {
     window.sessionStorage.setItem("prizes", JSON.stringify(prizes));
-  }, [prizes]);
+  }, [prizes.prizeOne, prizes.prizeTwo, prizes.prizeThree, prizes.prizeFour]);
 
-  return { prizes, setPrizes, handlePrizes };
+  return { prizes, handlePrizes };
 };
 
 export default usePrizes;

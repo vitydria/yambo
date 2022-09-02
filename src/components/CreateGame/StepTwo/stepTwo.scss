@@ -9,6 +9,7 @@
 .upload-label {
   margin: 0.5rem 0;
   border-style: dashed;
+  margin-top: 2rem;
   padding: 0.5rem;
   background-color: transparent;
   text-transform: uppercase;
@@ -18,17 +19,49 @@
 .thumbnail-container {
   display: flex;
   width: 80%;
+  height: 2rem;
   justify-content: center;
   gap: 0.5rem;
 }
 
 .thumbnail {
   width: 25%;
+  margin: 1rem 0;
 }
 
 .input-error {
   color: red;
   margin: 0;
+}
+
+.small-button {
+  background: linear-gradient(180deg, #5eb8fa 0%, #8a49f7 100%);
+  color: #ffffff;
+  border: none;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 1px;
+  font-family: "DM Sans Bold";
+  padding: 0.6rem;
+  cursor: pointer;
+
+  &:hover {
+    background: linear-gradient(
+      180deg,
+      rgba(94, 184, 250, 1) 35%,
+      rgba(138, 73, 247, 0.9) 100%
+    );
+  }
+
+  &:active() {
+    box-shadow: 13px 20px 40px 10px rgb(0 0 0 / 15%);
+    transform: translateY(4px);
+    /* Moving button 4px to y-axis */
+  }
+}
+
+.hide {
+  visibility: hidden;
 }
 
 .upload-input {

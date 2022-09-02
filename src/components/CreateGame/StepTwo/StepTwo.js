@@ -30,14 +30,14 @@ const StepTwo = ({ previousStep, nextStep, handleForm }) => {
         </button>
 
         <button
-          className={`small-button ${images.length < 1 ? "hide" : ""}`}
+          className={`small-button${images.length < 1 ? "hide" : ""}`}
           onClick={clearImages}
         >
           Clear
         </button>
 
         <div
-          className={`thumbnail-container ${images.length < 1 ? "hide" : ""}`}
+          className={`thumbnail-container${images.length < 1 ? "hide" : ""}`}
         >
           {images?.map((img, index) => {
             return (

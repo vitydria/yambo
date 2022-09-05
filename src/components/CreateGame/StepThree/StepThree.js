@@ -20,14 +20,14 @@ const prizeSchema = yup
       .number()
       .typeError("The prize must be a number")
       .required("You need to set the 2nd prize")
-      .lessThan(yup.ref("firstPrize"), "Prize must be minus than first prize"),
+      .lessThan(yup.ref("firstPrize"), "Prize must be lower than first prize"),
     thirdPrize: yup
       .number()
       .typeError("The prize must be a number")
       .required("You need to set the 3rd prize")
       .lessThan(
         yup.ref("secondPrize"),
-        "Prize must be minus than second prize"
+        "Prize must be lower than second prize"
       ),
     fourthPrize: yup
       .number()

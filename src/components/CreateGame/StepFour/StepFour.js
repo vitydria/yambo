@@ -33,7 +33,7 @@ const StepFour = ({ gameUrl }) => {
       <p className="text">Your game is created, enjoy</p>
       <div className="btn-container-four">
         <button className="button" onClick={copyToClipboard}>
-          Copy game URL
+          Copy Game URL
         </button>
         <button className="button" onClick={handleSharing}>
           {share}

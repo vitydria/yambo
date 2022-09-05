@@ -25,6 +25,12 @@ const FormProvider = ({ children }) => {
     }
   };
 
+  const previousStep = () => {
+    const actualStep = JSON.parse(window.sessionStorage.getItem("step")) - 1;
+    window.sessionStorage.setItem("step", JSON.stringify(actualStep));
+    setStep(JSON.parse(window.sessionStorage.getItem("step")));
+  };
+
   const nextStep = () => {
     if (step === 0) {
       window.sessionStorage.setItem("step", JSON.stringify(1));
@@ -40,6 +46,7 @@ const FormProvider = ({ children }) => {
     form,
     handleForm,
     step,
+    previousStep,
     nextStep,
   };
 

@@ -18,8 +18,6 @@ const Smash = () => {
   const { start, setStart } = useStart();
   const { won, setWon } = useWon();
 
-  console.log(start);
-
   return (
     <div className={`smash ${!start ? "" : "start"} ${won ? "won" : ""}`}>
       <Helmet>

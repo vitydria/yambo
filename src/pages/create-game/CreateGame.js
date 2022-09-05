@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 //hooks
-
 import useStart from "../../hooks/useStart";
 //context
 import { useFormContext } from "../../hooks/useFormContext";
@@ -18,7 +17,7 @@ const CreateGame = () => {
   const context = useFormContext();
   const [gameUrl, setGameUrl] = useState();
 
-  const { step, nextStep, form, handleForm } = context;
+  const { step, nextStep, form, handleForm, previousStep } = context;
 
   useEffect(() => {
     if (step === 3) {
@@ -33,10 +32,18 @@ const CreateGame = () => {
         <StepOne nextStep={nextStep} handleForm={handleForm} />
       )}
       {start && step === 1 && (
-        <StepTwo nextStep={nextStep} handleForm={handleForm} />
+        <StepTwo
+          previousStep={previousStep}
+          nextStep={nextStep}
+          handleForm={handleForm}
+        />
       )}
       {start && step === 2 && (
-        <StepThree nextStep={nextStep} handleForm={handleForm} />
+        <StepThree
+          previousStep={previousStep}
+          nextStep={nextStep}
+          handleForm={handleForm}
+        />
       )}
       {start && step === 3 && (
         <StepFour

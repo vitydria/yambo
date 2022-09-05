@@ -37,7 +37,7 @@ const prizeSchema = yup
   })
   .required();
 
-const StepThree = ({ nextStep, handleForm }) => {
+const StepThree = ({ previousStep, nextStep, handleForm }) => {
   const { prizes, handlePrizes } = usePrizes();
   const {
     register,
@@ -133,9 +133,14 @@ const StepThree = ({ nextStep, handleForm }) => {
           <p className="input-errors">{errors?.fourthPrize?.message}</p>
         )}
 
-        <button className="button" type="submit">
-          Next
-        </button>
+        <div className="btn-container">
+          <button className="button" onClick={previousStep}>
+            Back
+          </button>
+          <button className="button" type="submit">
+            Finish
+          </button>
+        </div>
       </FormContainer>
     </div>
   );

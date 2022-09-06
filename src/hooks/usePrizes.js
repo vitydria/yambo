@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
+import { getValue, setValue } from "../utils/localstorage";
 
 const usePrizes = () => {
   const [prizes, setPrizes] = useState(
-    window.sessionStorage.getItem("prizes")
-      ? JSON.parse(window.sessionStorage.getItem("prizes"))
-      : {
-          prizeOne: "",
-          prizeTwo: "",
-          prizeThree: "",
-          prizeFour: "",
-        }
+    getValue("prizes", {
+      prizeOne: "",
+      prizeTwo: "",
+      prizeThree: "",
+      prizeFour: "",
+    })
   );
 
   const handlePrizes = (key, value) => {
@@ -20,7 +19,7 @@ const usePrizes = () => {
   };
 
   useEffect(() => {
-    window.sessionStorage.setItem("prizes", JSON.stringify(prizes));
+    setValue("prizes", prizes);
   }, [prizes.prizeOne, prizes.prizeTwo, prizes.prizeThree, prizes.prizeFour]);
 
   return { prizes, handlePrizes };

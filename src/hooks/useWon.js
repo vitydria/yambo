@@ -1,14 +1,11 @@
 import { useState, useEffect } from "react";
+import { getValue, setValue } from "../utils/localstorage";
 
 const useWon = () => {
-  const [won, setWon] = useState(
-    window.sessionStorage.getItem("start")
-      ? JSON.parse(window.sessionStorage.getItem("start"))
-      : false
-  );
+  const [won, setWon] = useState(getValue("won", false));
 
   useEffect(() => {
-    window.sessionStorage.setItem("prizes", JSON.stringify(won));
+    setValue("won", won);
   }, [won]);
 
   return { won, setWon };

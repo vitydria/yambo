@@ -7,6 +7,7 @@ import { useSettingsContext } from "../../hooks/useSettingsContext.js";
 import { Helmet } from "react-helmet";
 //utils
 import getQueryParams from "../../utils/queryparams";
+import { navigateTo } from "../../utils/navigateTo.js";
 //styles
 import "./main.scss";
 
@@ -16,6 +17,7 @@ const Main = () => {
   const [searchParams] = useSearchParams();
   const gameSettings = getQueryParams(searchParams);
   const { settings, setSettings } = useSettingsContext();
+
   let navigate = useNavigate();
 
   useEffect(() => {
@@ -23,23 +25,17 @@ const Main = () => {
   }, []);
 
   useEffect(() => {
-    let timer;
-
     if (settings.game === "unset") {
-      timer = setTimeout(() => {
-        navigate("/create-game", { replace: true });
-      }, 500);
+      navigateTo("/create-game", navigate);
     }
 
     if (settings.game === "1") {
-      timer = setTimeout(() => {
-        navigate("/scratch-game", { replace: true });
-      }, 500);
+      navigateTo("/scratch-game", navigate);
     }
 
     return () => {
-      if (timer) {
-        clearTimeout(timer);
+      if (navigateTo) {
+        clearTimeout(navigateTo);
       }
     };
   }, [settings]);

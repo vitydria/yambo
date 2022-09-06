@@ -19,6 +19,7 @@ const StepTwo = ({ previousStep, nextStep, handleForm }) => {
   return (
     <>
       <div className="upload-container">
+        <button onClick={() => handleImages("sdsds")}></button>
         <h1 className="text title">Upload your photos</h1>
         <button
           className="text upload-label"
@@ -26,7 +27,7 @@ const StepTwo = ({ previousStep, nextStep, handleForm }) => {
             handleOpenWidget(images?.length, handleImages, 4 - images.length);
           }}
         >
-          Choose files
+          Select files
         </button>
 
         <button

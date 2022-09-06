@@ -61,7 +61,7 @@ const StepThree = ({ previousStep, nextStep, handleForm }) => {
   return (
     <div className="prize-container">
       <FormContainer onSubmit={handleSubmit(onSubmit)}>
-        <h1 className="text title">Choose your prizes</h1>
+        <h1 className="text title">Set Prizes</h1>
         <p className="text">1st Prize</p>
         <p className="text">
           $

@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
-// Context
+//context
 import SettingsContext from "./SettingsContext";
+//utils
+import { getValue, setValue } from "../utils/localstorage";
 
 export const SettingsProvider = ({ children }) => {
-  const [settings, setSettings] = useState(
-    window.sessionStorage.getItem("settings")
-      ? JSON.parse(window.sessionStorage.getItem("settings"))
-      : {}
-  );
+  const [settings, setSettings] = useState(getValue("settings", {}));
+
   const context = {
     settings,
     setSettings,
@@ -15,7 +14,7 @@ export const SettingsProvider = ({ children }) => {
 
   useEffect(() => {
     if (settings !== {}) {
-      window.sessionStorage.setItem("settings", JSON.stringify(settings));
+      setValue("settings", settings);
     }
   }, [settings]);
 

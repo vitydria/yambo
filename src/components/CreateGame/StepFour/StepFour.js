@@ -1,42 +1,30 @@
 import { useState } from "react";
+//utils
+import { copyToClipboard, handleSharing } from "../../../utils/share";
 //styles
 import "./stepFour.scss";
 
 const StepFour = ({ gameUrl }) => {
-  const [share, setShare] = useState("Share");
-
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(`${window.location.origin}/${gameUrl}`);
-    window.sessionStorage.clear();
-  };
-
-  const handleSharing = async () => {
-    const sharedData = {
-      text: "Enjoy",
-      title: "Yambo",
-      url: `${window.location.origin}/${gameUrl}`,
-    };
-
-    if (navigator.share) {
-      try {
-        await navigator.share(sharedData).then(() => setShare("Share Again"));
-      } catch (e) {
-        console.log("An error has ocurred: ", e);
-      }
-    } else {
-      navigator.clipboard.writeText(`${window.location.origin}/${gameUrl}`);
-    }
-  };
+  const [sharedMessage, setSharedMessage] = useState("Share");
+  const [copyMessage, setCopyMessage] = useState("Copy URL Game");
 
   return (
     <div className="game-container">
       <p className="text">Your game is created, enjoy</p>
       <div className="btn-container-four">
-        <button className="button" onClick={copyToClipboard}>
-          Copy Game URL
+        <button
+          className="button"
+          onClick={() => copyToClipboard(gameUrl, setCopyMessage)}
+        >
+          {copyMessage}
         </button>
-        <button className="button" onClick={handleSharing}>
-          {share}
+        <button
+          className="button"
+          onClick={() =>
+            handleSharing(gameUrl, setSharedMessage, setCopyMessage)
+          }
+        >
+          {sharedMessage}
         </button>
       </div>
     </div>

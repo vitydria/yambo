@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
-//hooks
-import useStart from "../../hooks/useStart";
 //context
 import { useFormContext } from "../../hooks/useFormContext";
 //components
-import CreateStart from "../../components/CreateGame/CreateStart/CreateStart";
 import StepOne from "../../components/CreateGame/StepOne/StepOne";
 import StepTwo from "../../components/CreateGame/StepTwo/StepTwo";
 import StepThree from "../../components/CreateGame/StepThree/StepThree";
@@ -13,7 +10,6 @@ import StepFour from "../../components/CreateGame/StepFour/StepFour";
 import { getUrl } from "../../utils/url";
 
 const CreateGame = () => {
-  const { start, setStart } = useStart();
   const context = useFormContext();
   const [gameUrl, setGameUrl] = useState();
 
@@ -27,25 +23,22 @@ const CreateGame = () => {
 
   return (
     <div className="layout">
-      {!start && <CreateStart setStart={setStart} />}
-      {start && step === 0 && (
-        <StepOne nextStep={nextStep} handleForm={handleForm} />
-      )}
-      {start && step === 1 && (
+      {step === 0 && <StepOne nextStep={nextStep} handleForm={handleForm} />}
+      {step === 1 && (
         <StepTwo
           previousStep={previousStep}
           nextStep={nextStep}
           handleForm={handleForm}
         />
       )}
-      {start && step === 2 && (
+      {step === 2 && (
         <StepThree
           previousStep={previousStep}
           nextStep={nextStep}
           handleForm={handleForm}
         />
       )}
-      {start && step === 3 && (
+      {step === 3 && (
         <StepFour
           nextStep={nextStep}
           handleForm={handleForm}

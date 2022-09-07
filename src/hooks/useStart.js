@@ -1,14 +1,11 @@
 import { useState, useEffect } from "react";
+import { getValue, setValue } from "../utils/localstorage";
 
 const useStart = () => {
-  const [start, setStart] = useState(
-    window.sessionStorage.getItem("start")
-      ? JSON.parse(window.sessionStorage.getItem("start"))
-      : false
-  );
+  const [start, setStart] = useState(getValue("start", false));
 
   useEffect(() => {
-    window.sessionStorage.setItem("start", JSON.stringify(start));
+    setValue("start", start);
   }, [start]);
 
   return { start, setStart };

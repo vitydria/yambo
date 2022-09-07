@@ -1,11 +1,8 @@
 import { useState, useEffect } from "react";
+import { getValue, removeValue, setValue } from "../utils/localstorage";
 
 const useImages = () => {
-  const [images, setImages] = useState(
-    window.sessionStorage.getItem("images")
-      ? JSON.parse(window.sessionStorage.getItem("images"))
-      : []
-  );
+  const [images, setImages] = useState(getValue("images", []));
 
   const handleImages = (newImage) => {
     setImages((thumbnails) => [...thumbnails, newImage]);
@@ -19,12 +16,11 @@ const useImages = () => {
 
   const clearImages = () => {
     setImages([]);
-    window.sessionStorage.removeItem("images");
+    removeValue("images");
   };
 
   useEffect(() => {
-    if (images.length > 0)
-      window.sessionStorage.setItem("images", JSON.stringify(images));
+    if (images.length > 0) setValue("images", images);
   }, [images]);
 
   return { images, handleImages, updateImages, clearImages };

@@ -13,7 +13,6 @@ import "./smash.scss";
 import useStart from "../../hooks/useStart";
 
 const Smash = () => {
-  window.sessionStorage.clear();
   const { clicks, setClicks } = useSmash();
   const { start, setStart } = useStart();
   const { won, setWon } = useWon();

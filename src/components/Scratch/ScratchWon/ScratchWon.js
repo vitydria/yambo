@@ -26,7 +26,6 @@ export const ScratchWon = ({ win }) => {
       <Link
         className="button"
         to="/more-games"
-        onClick={window.sessionStorage.clear()}
         style={{ textDecoration: "none", color: "white" }}
       >
         CONTINUE

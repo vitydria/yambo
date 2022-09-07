@@ -27,11 +27,7 @@ const MoreGames = () => {
         <Game />
         <Game />
         <p className="text mg-foo">
-          <Link
-            to="/"
-            style={{ textDecoration: "none", color: "white" }}
-            onClick={window.sessionStorage.clear()}
-          >
+          <Link to="/" style={{ textDecoration: "none", color: "white" }}>
             See More...
           </Link>
         </p>

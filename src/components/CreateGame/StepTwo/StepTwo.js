@@ -20,7 +20,6 @@ const StepTwo = ({ previousStep, nextStep, handleForm }) => {
     <>
       <button onClick={() => handleImages("ssdsds")}>asd</button>
       <div className="upload-container">
-        <h1 className="text title">Upload Your Photos</h1>
         <button
           className="text upload-label"
           onClick={() => {

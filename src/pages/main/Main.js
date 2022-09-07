@@ -12,8 +12,6 @@ import { navigateTo } from "../../utils/navigateTo.js";
 import "./main.scss";
 
 const Main = () => {
-  window.sessionStorage.clear();
-
   const [searchParams] = useSearchParams();
   const gameSettings = getQueryParams(searchParams);
   const { settings, setSettings } = useSettingsContext();

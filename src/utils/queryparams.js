@@ -2,6 +2,7 @@
 import { randomPrize } from "./scratch";
 
 const getQueryParams = (searchParams) => {
+  window.sessionStorage.clear();
   if (searchParams.get("g") !== null) {
     const query = window.atob(searchParams.get("g"));
     let [game, tokens, ...urls] = query.split("/");

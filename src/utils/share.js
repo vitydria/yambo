@@ -15,18 +15,16 @@ export const handleSharing = async (url, setSharedMessage, setCopyMessage) => {
     try {
       await navigator.share(sharedData).then(() => {
         setSharedMessage("Share again");
-        window.sessionStorage.clear();
       });
     } catch (e) {
       navigator.clipboard.writeText(`${window.location.origin}/${url}`);
       setSharedMessage("URL Copied!");
       setCopyMessage("URL Copied!");
-      window.sessionStorage.clear();
     }
   } else {
     navigator.clipboard.writeText(`${window.location.origin}/${url}`);
     setSharedMessage("URL Copied!");
     setCopyMessage("URL Copied!");
-    window.sessionStorage.clear();
   }
+  window.sessionStorage.clear();
 };

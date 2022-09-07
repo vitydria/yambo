@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-//hooks
-import useStart from "../../hooks/useStart";
 //context
 import { useFormContext } from "../../hooks/useFormContext";
 //components
@@ -50,3 +48,5 @@ const CreateGame = () => {
     </div>
   );
 };
+
+export default CreateGame;

@@ -18,6 +18,8 @@ const Main = () => {
 
   let navigate = useNavigate();
 
+  console.log(gameSettings);
+
   useEffect(() => {
     setSettings(gameSettings);
   }, []);

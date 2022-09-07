@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getValue, removeValue, setValue } from "../utils/localstorage";
+import { getValue, removeValue, setValue } from "../utils/sessionstorage";
 
 const useImages = () => {
   const [images, setImages] = useState(getValue("images", []));

@@ -1,6 +1,6 @@
 import { useState } from "react";
 //utils
-import { setValue, getValue } from "../utils/localstorage";
+import { setValue, getValue } from "../utils/sessionstorage";
 // Context
 import FormContext from "./FormContext";
 

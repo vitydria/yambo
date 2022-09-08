@@ -11,9 +11,10 @@ import { getUrl } from "../../utils/url";
 
 const CreateGame = () => {
   const context = useFormContext();
-  const [gameUrl, setGameUrl] = useState();
+  const [gameUrl, setGameUrl] = useState("");
 
-  const { step, nextStep, form, handleForm, previousStep } = context;
+  const { step, setStep, nextStep, form, handleForm, previousStep } = context;
+  console.log(form);
 
   useEffect(() => {
     if (step === 3) {
@@ -26,24 +27,24 @@ const CreateGame = () => {
       {step === 0 && <StepOne nextStep={nextStep} handleForm={handleForm} />}
       {step === 1 && (
         <StepTwo
+          setStep={setStep}
           previousStep={previousStep}
           nextStep={nextStep}
+          form={form}
           handleForm={handleForm}
         />
       )}
       {step === 2 && (
         <StepThree
+          form={form}
+          setStep={setStep}
           previousStep={previousStep}
           nextStep={nextStep}
           handleForm={handleForm}
         />
       )}
       {step === 3 && (
-        <StepFour
-          nextStep={nextStep}
-          handleForm={handleForm}
-          gameUrl={gameUrl}
-        />
+        <StepFour gameUrl={gameUrl} form={form} setStep={setStep} />
       )}
     </div>
   );

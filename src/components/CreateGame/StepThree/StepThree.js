@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 //react-hook-form
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -37,7 +38,7 @@ const prizeSchema = yup
   })
   .required();
 
-const StepThree = ({ previousStep, nextStep, handleForm }) => {
+const StepThree = ({ previousStep, nextStep, form, handleForm, setStep }) => {
   const { prizes, handlePrizes } = usePrizes();
   const {
     register,
@@ -52,6 +53,14 @@ const StepThree = ({ previousStep, nextStep, handleForm }) => {
       fourthPrize: prizes.prizeFour,
     },
   });
+
+  useEffect(() => {
+    if (!form.gameSelected || form.images.length < 4) {
+      console.log("step three form: ", form);
+      window.sessionStorage.clear();
+      setStep(0);
+    }
+  }, []);
 
   const onSubmit = (data) => {
     handleForm(data);

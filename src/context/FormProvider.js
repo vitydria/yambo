@@ -43,6 +43,7 @@ const FormProvider = ({ children }) => {
     step,
     previousStep,
     nextStep,
+    setStep,
   };
 
   return (

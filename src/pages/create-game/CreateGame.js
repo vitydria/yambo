@@ -11,7 +11,7 @@ import { getUrl } from "../../utils/url";
 
 const CreateGame = () => {
   const context = useFormContext();
-  const [gameUrl, setGameUrl] = useState();
+  const [gameUrl, setGameUrl] = useState("");
 
   const { step, nextStep, form, handleForm, previousStep } = context;
 
@@ -38,13 +38,7 @@ const CreateGame = () => {
           handleForm={handleForm}
         />
       )}
-      {step === 3 && (
-        <StepFour
-          nextStep={nextStep}
-          handleForm={handleForm}
-          gameUrl={gameUrl}
-        />
-      )}
+      {step === 3 && <StepFour gameUrl={gameUrl} form={form} />}
     </div>
   );
 };

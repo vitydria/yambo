@@ -54,7 +54,7 @@ const StepThree = ({ previousStep, nextStep, handleForm }) => {
   });
 
   const onSubmit = (data) => {
-    handleForm(data);
+    handleForm({ prizes: data });
     nextStep();
   };
 

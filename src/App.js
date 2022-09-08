@@ -20,10 +20,10 @@ function App() {
         <SettingsProvider>
           <Routes>
             <Route path="/" element={<Main />} />
-            <Route path="smash-button-game" element={<Smash />} />
-            <Route path="scratch-game" element={<Scratch />} />
-            <Route path="more-games" element={<MoreGames />} />
-            <Route path="create-game" element={<CreateGame />} />
+            <Route path="/smash-button-game" element={<Smash />} />
+            <Route path="/scratch-game" element={<Scratch />} />
+            <Route path="/more-games" element={<MoreGames />} />
+            <Route exact path="/create-game" element={<CreateGame />} />
           </Routes>
         </SettingsProvider>
       </FormProvider>

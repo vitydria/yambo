@@ -23,21 +23,21 @@ const StepTwo = ({ previousStep, nextStep, handleForm }) => {
         <button
           className="text upload-label"
           onClick={() => {
-            handleOpenWidget(images?.length, handleImages, 4 - images.length);
+            handleOpenWidget(images?.length, handleImages, 4 - images?.length);
           }}
         >
           Select files
         </button>
 
         <button
-          className={`small-button ${images.length < 1 ? "hide" : ""}`}
+          className={`small-button ${images?.length < 1 ? "hide" : ""}`}
           onClick={clearImages}
         >
           Clear
         </button>
 
         <div
-          className={`thumbnail-container ${images.length < 1 ? "hide" : ""}`}
+          className={`thumbnail-container ${images?.length < 1 ? "hide" : ""}`}
         >
           {images?.map((img, index) => {
             return (
@@ -47,14 +47,20 @@ const StepTwo = ({ previousStep, nextStep, handleForm }) => {
                 alt={`#${index} thumbnail`}
                 className="thumbnail"
                 onClick={() => {
-                  handleOpenWidget(images.length, updateImages, 1, true, index);
+                  handleOpenWidget(
+                    images?.length,
+                    updateImages,
+                    1,
+                    true,
+                    index
+                  );
                 }}
               />
             );
           })}
         </div>
 
-        <p className="text-warning">{images.length}/4 images uploaded</p>
+        <p className="text-warning">{images?.length}/4 images uploaded</p>
 
         <div className="btn-container">
           <button className="button" onClick={previousStep}>
@@ -63,7 +69,7 @@ const StepTwo = ({ previousStep, nextStep, handleForm }) => {
           <button
             className="button"
             onClick={submitImages}
-            disabled={images.length < 4}
+            disabled={images?.length < 4}
           >
             Next
           </button>

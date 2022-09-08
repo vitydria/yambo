@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 //context
 import SettingsContext from "./SettingsContext";
 //utils
-import { getValue, setValue } from "../utils/localstorage";
+import { getValue, setValue } from "../utils/sessionstorage";
 
 export const SettingsProvider = ({ children }) => {
   const [settings, setSettings] = useState(getValue("settings", {}));

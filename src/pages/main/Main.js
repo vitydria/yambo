@@ -10,16 +10,18 @@ import getQueryParams from "../../utils/queryparams";
 import { navigateTo } from "../../utils/navigateTo.js";
 //styles
 import "./main.scss";
+import { useFormContext } from "../../hooks/useFormContext.js";
 
 const Main = () => {
   const [searchParams] = useSearchParams();
-  const gameSettings = getQueryParams(searchParams);
   const { settings, setSettings } = useSettingsContext();
+  const { resetProvider } = useFormContext();
 
   let navigate = useNavigate();
 
   useEffect(() => {
-    setSettings(gameSettings);
+    resetProvider();
+    setSettings(getQueryParams(searchParams));
   }, []);
 
   useEffect(() => {

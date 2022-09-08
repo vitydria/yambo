@@ -22,14 +22,14 @@ const useScratch = ({ width, height, background, foreground, onfinished }) => {
   const [displaySize, setDisplaySize] = useState(null);
   const [scratchPosition, setScratchPosition] = useState(defaultMousePosition);
 
+  useEffect(() => {
+    loadImage(foreground, setForeground);
+  }, [foreground]);
   // Load images from props
   useEffect(() => {
     loadImage(background, setBackground);
   }, [background]);
 
-  useEffect(() => {
-    loadImage(foreground, setForeground);
-  }, [foreground]);
   // Setup display canvas and scratch canvas
   useEffect(() => {
     setup(canvasReference.current, setContext, setScratchContext);

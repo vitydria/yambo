@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getValue, setValue } from "../utils/localstorage";
+import { getValue, setValue } from "../utils/sessionstorage";
 
 const usePrizes = () => {
   const [prizes, setPrizes] = useState(

@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 //hooks
 import useImages from "../../../hooks/useImages";
 //utils
@@ -7,16 +6,8 @@ import { baseUrl } from "../../../utils/url";
 //styles
 import "./stepTwo.scss";
 
-const StepTwo = ({ previousStep, nextStep, setStep, form, handleForm }) => {
+const StepTwo = ({ previousStep, nextStep, handleForm }) => {
   const { images, handleImages, updateImages, clearImages } = useImages();
-
-  useEffect(() => {
-    if (!form.gameSelected) {
-      console.log("step two form: ", form);
-      window.sessionStorage.clear();
-      setStep(0);
-    }
-  }, []);
 
   const submitImages = () => {
     if (images?.length === 4) {

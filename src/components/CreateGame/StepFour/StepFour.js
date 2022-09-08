@@ -1,26 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 //utils
 import { copyToClipboard, handleSharing } from "../../../utils/share";
 //styles
 import "./stepFour.scss";
 
-const StepFour = ({ gameUrl, form, setStep }) => {
+const StepFour = ({ gameUrl }) => {
   const [sharedMessage, setSharedMessage] = useState("Share");
   const [copyMessage, setCopyMessage] = useState("Copy URL Game");
-
-  useEffect(() => {
-    if (!form.gameSelected || form.images.length < 4 || !form.prizes) {
-      console.log(
-        form,
-        !form.gameSelected,
-        form.images.length < 4,
-        form.prizes
-      );
-
-      // window.sessionStorage.clear();
-      // setStep(0);
-    }
-  }, []);
 
   return (
     <div className="game-container">

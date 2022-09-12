@@ -17,31 +17,31 @@ const Main = () => {
   const { settings, setSettings } = useSettingsContext();
   const { resetProvider } = useFormContext();
 
-  let navigate = useNavigate();
+  // let navigate = useNavigate();
 
-  useEffect(() => {
-    resetProvider();
-    setSettings(getQueryParams(searchParams));
-  }, []);
+  // useEffect(() => {
+  //   resetProvider();
+  //   setSettings(getQueryParams(searchParams));
+  // }, []);
 
-  useEffect(() => {
-    if (settings.game === "unset") {
-      navigateTo("/create-game", navigate);
-    }
+  // useEffect(() => {
+  //   if (settings.game === "unset") {
+  //     navigateTo("/create-game", navigate);
+  //   }
 
-    if (settings.game === "1") {
-      navigateTo("/scratch-game", navigate);
-    }
+  //   if (settings.game === "1") {
+  //     navigateTo("/scratch-game", navigate);
+  //   }
 
-    return () => {
-      if (navigateTo) {
-        clearTimeout(navigateTo);
-      }
-    };
-  }, [settings]);
+  //   return () => {
+  //     if (navigateTo) {
+  //       clearTimeout(navigateTo);
+  //     }
+  //   };
+  // }, [settings]);
 
   return (
-    <div className="main">
+    <div className="main-layout">
       <Helmet>
         <meta
           name="description"
@@ -49,7 +49,7 @@ const Main = () => {
         />
         <title>Yambo</title>
       </Helmet>
-      <h1 className="main-title text">yambo</h1>
+      <h1 className="main-title">yambo</h1>
     </div>
   );
 };

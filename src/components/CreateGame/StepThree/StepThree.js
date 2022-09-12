@@ -137,7 +137,7 @@ const StepThree = ({ previousStep, nextStep, handleForm }) => {
           <button className="button" onClick={previousStep}>
             Back
           </button>
-          <button className="button" type="submit">
+          <button className="button" type="subvemit">
             Finish
           </button>
         </div>

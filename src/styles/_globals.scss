@@ -1,4 +1,8 @@
 @import "_variables";
+@import "_buttons";
+@import "_layouts";
+@import "_mixins";
+@import "_typography";
 
 .App {
   height: 100vh;
@@ -9,110 +13,4 @@
   right: 50px;
   top: 20px;
   gap: 5px;
-}
-
-.main-btn {
-  width: 15px;
-  margin-left: 2px;
-  height: 15px;
-  border-radius: 50%;
-}
-
-.gold {
-  background: gold;
-  border: 1px solid gold;
-}
-
-.blue {
-  background: skyblue;
-  border: 1px solid skyblue;
-}
-
-.green {
-  background: green;
-  border: 1px solid green;
-}
-
-.text {
-  font-family: "DM Sans Bold";
-  text-align: center;
-  color: white;
-}
-
-.text-warning {
-  font-family: "DM Sans Bold";
-  text-align: center;
-  color: rgb(253, 253, 64);
-}
-
-.host {
-  font-size: 1.375rem;
-  letter-spacing: -0.8px;
-}
-
-.title {
-  font-size: 2.5rem;
-  line-height: 2rem;
-  letter-spacing: -0.8px;
-}
-
-.layout {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 70px calc(100vh - 140px) 70px;
-  height: 100vh;
-  position: fixed;
-  overflow: hidden;
-  align-items: center;
-  width: 100%;
-}
-
-.button {
-  background: linear-gradient(180deg, #5eb8fa 0%, #8a49f7 100%);
-  color: #ffffff;
-  border-radius: 30px;
-  width: 80%;
-  max-width: 300px;
-  font-family: "DM Sans Bold";
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: 1px;
-  cursor: pointer;
-  text-align: center;
-  border: none;
-  padding-top: 10px;
-  padding-bottom: 10px;
-
-  &:hover:not(:disabled) {
-    background: linear-gradient(
-      180deg,
-      rgba(94, 184, 250, 1) 35%,
-      rgba(138, 73, 247, 0.9) 100%
-    );
-  }
-
-  &:active:not(:disabled) {
-    box-shadow: 13px 20px 40px 10px rgb(0 0 0 / 15%);
-    transform: translateY(4px);
-    /* Moving button 4px to y-axis */
-  }
-
-  &:disabled {
-    background: linear-gradient(
-      180deg,
-      rgba(94, 184, 250, 0.5) 35%,
-      rgba(138, 73, 247, 0.45) 100%
-    );
-    box-shadow: none;
-  }
-}
-
-@media (max-width: $breakpoints-small) {
-  .title {
-    font-size: 1.875rem;
-  }
-
-  .button {
-    font-size: 0.75rem;
-  }
 }

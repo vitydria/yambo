@@ -61,7 +61,7 @@ const StepThree = ({ previousStep, nextStep, handleForm }) => {
   return (
     <div className="prize-container">
       <FormContainer onSubmit={handleSubmit(onSubmit)}>
-        <h1 className="text title">Set Prizes</h1>
+        <h1 className="title">Set Prizes</h1>
         <p className="text">1st Prize</p>
         <p className="text">
           $
@@ -77,7 +77,7 @@ const StepThree = ({ previousStep, nextStep, handleForm }) => {
           Amazon gift card
         </p>
         {errors?.firstPrize?.message && (
-          <p className="input-errors">{errors?.firstPrize?.message}</p>
+          <p className="input-errors warning">{errors?.firstPrize?.message}</p>
         )}
 
         <p className="text">2nd Prize</p>
@@ -95,7 +95,7 @@ const StepThree = ({ previousStep, nextStep, handleForm }) => {
           Amazon gift card
         </p>
         {errors?.secondPrize?.message && (
-          <p className="input-errors">{errors?.secondPrize?.message}</p>
+          <p className="input-errors warning">{errors?.secondPrize?.message}</p>
         )}
 
         <p className="text">3rd Prize</p>
@@ -113,7 +113,7 @@ const StepThree = ({ previousStep, nextStep, handleForm }) => {
           Amazon gift card
         </p>
         {errors?.thirdPrize?.message && (
-          <p className="input-errors">{errors?.thirdPrize?.message}</p>
+          <p className="input-errors warning">{errors?.thirdPrize?.message}</p>
         )}
 
         <p className="text">4th Prize</p>
@@ -130,14 +130,14 @@ const StepThree = ({ previousStep, nextStep, handleForm }) => {
           Tokens
         </p>
         {errors?.fourthPrize?.message && (
-          <p className="input-errors">{errors?.fourthPrize?.message}</p>
+          <p className="input-errors warning">{errors?.fourthPrize?.message}</p>
         )}
 
         <div className="btn-container">
-          <button className="button" onClick={previousStep}>
+          <button className="button button__small" onClick={previousStep}>
             Back
           </button>
-          <button className="button" type="subvemit">
+          <button className="button button__small" type="subvemit">
             Finish
           </button>
         </div>

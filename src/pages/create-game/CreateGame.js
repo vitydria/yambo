@@ -22,7 +22,7 @@ const CreateGame = () => {
   }, [step]);
 
   return (
-    <div className="layout">
+    <div className="grid-layout">
       {step === 0 && <StepOne nextStep={nextStep} handleForm={handleForm} />}
       {step === 1 && (
         <StepTwo

@@ -19,7 +19,7 @@ const FormProvider = ({ children }) => {
     }
   };
 
-  const previousStep = () => {
+  const previousStep = () => {  
     const actualStep = getValue("step") - 1;
     setValue("step", actualStep);
     setStep((step) => step - 1);
@@ -27,7 +27,7 @@ const FormProvider = ({ children }) => {
 
   const nextStep = () => {
     if (step === 0) {
-      setValue("step", 1);
+      setValue("step", 1);  
       setStep(1);
     } else {
       const actualStep = getValue("step") + 1;

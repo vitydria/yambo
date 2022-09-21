@@ -21,7 +21,7 @@ const StepTwo = ({ previousStep, nextStep, handleForm }) => {
       <div className="upload-container">
         <h1 className="text title">Upload Your Photos</h1>
         <button
-          className="text upload-label"
+          className="host upload-label"
           onClick={() => {
             handleOpenWidget(images?.length, handleImages, 4 - images?.length);
           }}
@@ -60,14 +60,14 @@ const StepTwo = ({ previousStep, nextStep, handleForm }) => {
           })}
         </div>
 
-        <p className="text-warning">{images?.length}/4 images uploaded</p>
+        <p className="warning">{images?.length}/4 images uploaded</p>
 
         <div className="btn-container">
-          <button className="button" onClick={previousStep}>
+          <button className="button button__small" onClick={previousStep}>
             Back
           </button>
           <button
-            className="button"
+            className="button button__small"
             onClick={submitImages}
             disabled={images?.length < 4}
           >

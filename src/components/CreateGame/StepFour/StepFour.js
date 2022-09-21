@@ -10,16 +10,16 @@ const StepFour = ({ gameUrl }) => {
 
   return (
     <div className="game-container">
-      <p className="text">Your game is created, enjoy</p>
+      <p className="title-small">Your game is created, enjoy</p>
       <div className="btn-container-four">
         <button
-          className="button"
+          className="button button__large"
           onClick={() => copyToClipboard(gameUrl, setCopyMessage)}
         >
           {copyMessage}
         </button>
         <button
-          className="button"
+          className="button button__large"
           onClick={() =>
             handleSharing(gameUrl, setSharedMessage, setCopyMessage)
           }

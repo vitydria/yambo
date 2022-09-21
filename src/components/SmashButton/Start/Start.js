@@ -7,7 +7,7 @@ export const Start = ({ setStart }) => {
     <div className="start">
       <h1 className="host">@friendlyFriend presents...</h1>
       <div className="button-container">
-        <p className="text title">Tap Monster!</p>
+        <p className="title">Tap Monster!</p>
         <button
           className="button button__large"
           onClick={() => {

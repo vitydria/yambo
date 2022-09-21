@@ -3,9 +3,19 @@
   font-size: 7.2rem;
 }
 
+.text {
+  @include text;
+  font-size: 1.3rem;
+}
+
 .title {
   @include text;
   font-size: 4rem;
+}
+
+.title-small {
+  @include text;
+  font-size: 2.3rem;
 }
 
 .host {
@@ -24,4 +34,7 @@
 }
 
 .warning {
+  @include text;
+  font-size: 1.3rem;
+  color: rgb(253, 253, 64);
 }

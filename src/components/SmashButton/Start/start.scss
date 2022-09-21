@@ -5,7 +5,8 @@
 .start {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 70px calc(100vh - 140px) 70px;
+  grid-template-rows: 7rem calc(100vh - 1.4rem) 7rem;
+  align-items: center;
 }
 
 .start .header {

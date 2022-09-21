@@ -29,11 +29,11 @@ const StepOne = ({ nextStep, handleForm }) => {
     <>
       <div className="step-container">
         <FormContainer onSubmit={handleSubmit(onSubmit)}>
-          <h1 className="text title">Select Game</h1>
+          <h1 className="title">Select Game</h1>
           <div className="btn-container-one">
             <button
               type="submit"
-              className="button step-btn"
+              className="button button__small"
               onClick={() => {
                 setValue("gameSelected", "1");
               }}
@@ -42,7 +42,7 @@ const StepOne = ({ nextStep, handleForm }) => {
             </button>
             <button
               type="submit"
-              className="button step-btn"
+              className="button button__small"
               disabled
               onClick={() => {
                 setValue("gameSelected", "2");

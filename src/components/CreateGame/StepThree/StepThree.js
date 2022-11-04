@@ -1,3 +1,4 @@
+
 //react-hook-form
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -38,6 +39,7 @@ const prizeSchema = yup
   .required();
 
 const StepThree = ({ previousStep, nextStep, handleForm }) => {
+
   const { prizes, handlePrizes } = usePrizes();
   const {
     register,
@@ -62,7 +64,7 @@ const StepThree = ({ previousStep, nextStep, handleForm }) => {
     <div className="prize-container">
       <FormContainer onSubmit={handleSubmit(onSubmit)}>
         <h1 className="text title">Set Prizes</h1>
-        <p className="text">1st Prize</p>
+        <p className="text" >1st Prize</p>
         <p className="text">
           $
           <input
@@ -142,6 +144,7 @@ const StepThree = ({ previousStep, nextStep, handleForm }) => {
           </button>
         </div>
       </FormContainer>
+      <button>changeClass</button>
     </div>
   );
 };

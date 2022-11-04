@@ -11,6 +11,7 @@ import { navigateTo } from "../../utils/navigateTo.js";
 //styles
 import "./main.scss";
 import { useFormContext } from "../../hooks/useFormContext.js";
+import { useOverflow } from "../../hooks/useOverflow.js";
 
 const Main = () => {
   const [searchParams] = useSearchParams();
@@ -18,6 +19,7 @@ const Main = () => {
   const { resetProvider } = useFormContext();
 
   let navigate = useNavigate();
+  useOverflow();
 
   useEffect(() => {
     resetProvider();

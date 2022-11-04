@@ -8,8 +8,10 @@ import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 //style
 import "./moreGames.scss";
+import { useOverflow } from "../../hooks/useOverflow";
 
 const MoreGames = () => {
+  useOverflow();
   return (
     <div className="more-games">
       <Helmet>

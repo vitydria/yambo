@@ -9,10 +9,12 @@ import { ScratchStart } from "../../components/Scratch/Start/ScratchStart";
 import { Helmet } from "react-helmet";
 //styles
 import "./scratch.scss";
+import { useOverflow } from "../../hooks/useOverflow";
 
 const Scratch = () => {
   const { won, setWon } = useWon();
   const { start, setStart } = useStart();
+  useOverflow();
 
   return (
     <div className={`scratch ${won ? "scratch-won" : ""}`}>

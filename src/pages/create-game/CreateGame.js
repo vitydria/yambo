@@ -8,11 +8,12 @@ import StepThree from "../../components/CreateGame/StepThree/StepThree";
 import StepFour from "../../components/CreateGame/StepFour/StepFour";
 //utils
 import { getUrl } from "../../utils/url";
+import { useOverflow } from "../../hooks/useOverflow";
 
 const CreateGame = () => {
   const context = useFormContext();
   const [gameUrl, setGameUrl] = useState("");
-
+useOverflow();
   const { step, nextStep, form, handleForm, previousStep } = context;
 
   useEffect(() => {

@@ -144,7 +144,6 @@ const StepThree = ({ previousStep, nextStep, handleForm }) => {
           </button>
         </div>
       </FormContainer>
-      <button>changeClass</button>
     </div>
   );
 };
